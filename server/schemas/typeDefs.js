@@ -8,6 +8,10 @@ const typeDefs = gql`
     email: String
     password: String
   }
+    type Auth {
+    token: ID!
+    user: User
+  }
   type Planet {
     _id: ID
     name: String
@@ -20,6 +24,11 @@ const typeDefs = gql`
   type Query {
     users: [User]
     planets: [Planet]
+    planet(name: String): Planet
+  }
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
   }
 `;
 
