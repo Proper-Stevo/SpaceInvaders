@@ -6,21 +6,19 @@ const planetSchema = new Schema({
         // required: true,
     },
     mass: {
-        massValue: {
-            type: Schema.Types.Decimal128,
+            type: Number,
             // required: true
-        }
     },
     gravity: {
-        type: Schema.Types.Decimal128,
+        type: Number,
         // required: true
     },
     density: {
-        type: Schema.Types.Decimal128,
+        type: Number,
         // required: true
     },
     avgTemp: {
-        type: Schema.Types.Decimal128,
+        type: Number,
         // required: true
     },
     bodyType: {
