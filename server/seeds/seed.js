@@ -10,14 +10,11 @@ db.once('open', async () => {
   const planets = await Planets.insertMany(planetsData);
 
   console.log('Planets seeded!');
-  process.exit(0);
-});
-
-db.once('open', async () => {
+  
   await User.deleteMany({});
 
-  const planets = await User.insertMany(usersData);
+  const users = await User.insertMany(usersData);
 
-  console.log('Planets seeded!');
+  console.log('Users seeded!');
   process.exit(0);
 });
