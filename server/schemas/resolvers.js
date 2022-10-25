@@ -1,14 +1,13 @@
-const { Planets } = require('../models');
+const { Planets , User } = require('../models');
 
 const resolvers = {
   Query: {
-    tech: async () => {
+    users: async () => {
+      return User.find({});
+    },
+    planets: async () => {
       return Planets.find({});
-    },
-    matchups: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Planets.find(params);
-    },
+    }
   },
   // Mutation: {
   //   createMatchup: async (parent, args) => {
