@@ -1,9 +1,7 @@
 [
     {
         "name": "Mercury",
-        "mass": {
-            "massValue": 3.30114
-        },
+        "mass":  3.30114,
         "gravity": 3.7,
         "density": 5.4291,
         "avgTemp": 440,
@@ -11,9 +9,7 @@
     },
     {
         "name": "Venus",
-        "mass": {
-            "massValue": 4.86747
-        },
+        "mass":  4.86747,
         "gravity": 8.87,
         "density": 5.243,
         "avgTemp": 737,
@@ -21,9 +17,7 @@
     },
     {
         "name": "Earth",
-        "mass": {
-            "massValue": 5.97237
-        },
+        "mass": 5.97237,
         "gravity": 9.8,
         "density": 5.5136,
         "avgTemp": 288,
@@ -31,9 +25,7 @@
     },
     {
         "name": "Mars",
-        "mass": {
-            "massValue": 6.41712
-        },
+        "mass": 6.41712,
         "gravity": 3.71,
         "density": 3.9341,
         "avgTemp": 210,
@@ -41,9 +33,7 @@
     },
     {
         "name": "Jupiter",
-        "mass": {
-            "massValue": 1.89819
-        },
+        "mass": 1.89819,
         "gravity": 24.79,
         "density": 1.3262,
         "avgTemp": 165,
@@ -51,9 +41,7 @@
     },
     {
         "name": "Saturn",
-        "mass": {
-            "massValue": 5.68336
-        },
+        "mass": 5.68336,
         "gravity": 10.44,
         "density": 0.6871,
         "avgTemp": 134,
@@ -61,9 +49,7 @@
     },
     {
         "name": "Uranus",
-        "mass": {
-            "massValue": 8.68127
-        },
+        "mass": 8.68127,
         "gravity": 8.87,
         "density": 1.27,
         "avgTemp": 76,
@@ -71,9 +57,7 @@
     },
     {
         "name": "Neptune",
-        "mass": {
-            "massValue": 1.02413
-        },
+        "mass": 1.02413,
         "gravity": 11.15,
         "density": 1.638,
         "avgTemp": 55,
@@ -81,9 +65,7 @@
     },
     {
         "name": "Pluto",
-        "mass": {
-            "massValue": 1.303
-        },
+        "mass": 1.303,
         "gravity": 0.62,
         "density": 1.89,
         "avgTemp": 44,
