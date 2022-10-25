@@ -15,9 +15,9 @@ const typeDefs = gql`
   type Planet {
     _id: ID
     name: String
-    mass: Int
-    gravity: Int
-    density: Int
+    mass: Float
+    gravity: Float
+    density: Float
     avgTemp: Int
     bodyType: String
   }

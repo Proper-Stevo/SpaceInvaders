@@ -8,8 +8,8 @@ const resolvers = {
     planets: async () => {
       return Planets.find({});
     },
-    planets: async (parent, { name }) => {
-      return User.findOne({ name }).populate('planet');
+    planet: async (parent, { name }) => {
+      return Planets.findOne({ name });
     },
   },
   Mutation: {
