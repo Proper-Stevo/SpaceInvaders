@@ -29,6 +29,6 @@ const planetSchema = new Schema({
     }
 });
 
-const Planet = model('Planet', planetSchema);
+const Planet = model('planet', planetSchema);
 
 module.exports = Planet;
