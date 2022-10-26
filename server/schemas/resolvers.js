@@ -11,6 +11,13 @@ const resolvers = {
     planet: async (parent, { name }) => {
       return Planets.findOne({ name });
     },
+    comments: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Comment.find(params).sort({ createdAt: -1 });
+    },
+    comment: async (parent, { commentId }) => {
+      return Comment.findOne({ _id: commentId });
+    },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
@@ -34,6 +41,16 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addComment: async (parent, { commentText, commentAuthor }) => {
+      const comment = await Comment.create({ commentText, commentAuthor });
+
+      await User.findOneAndUpdate(
+        { username: commentAuthor },
+        { $addToSet: { comments: comment._id } }
+      );
+
+      return comment;
     },
   },
 };
