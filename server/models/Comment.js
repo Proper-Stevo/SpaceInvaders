@@ -18,6 +18,9 @@ const commentSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  planet: {
+    type: String
+  }
 });
 
 const Comment = model('Comment', commentSchema);

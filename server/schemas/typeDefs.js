@@ -33,13 +33,13 @@ const typeDefs = gql`
     planets: [Planet]
     planet(name: String): Planet
     comments(username: String): [Comment]
-    comments(commentId: ID!): Comment
+    comment(commentId: ID!): Comment
   }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addComment(commentText: String!, commentAuthor: String!): Comment
-    removecomment(commentId: ID!): Comment
+    removeComment(commentId: ID!): Comment
   }
 `;
 

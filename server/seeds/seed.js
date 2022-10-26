@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { Planets, User} = require('../models');
+const { Planets, User, Comment} = require('../models');
 
 const planetsData = require('./planetsData.json');
 const usersData = require('./usersData.json');
@@ -22,6 +22,18 @@ db.once('open', async () => {
   await Comment.deleteMany({});
 
   const comments = await Comment.insertMany(commentsData);  
+
+  for (let i = 0; i < commentsData.length; i++) {
+    const { _id, commentAuthor } = await Comment.create(commentsData[i]);
+    const user = await User.findOneAndUpdate(
+      { username: commentAuthor },
+      {
+        $addToSet: {
+          comments: _id,
+        },
+      }
+    );
+  }
 
   console.log('Comments seeded!');
   process.exit(0);
