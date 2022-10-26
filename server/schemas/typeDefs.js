@@ -7,6 +7,7 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+    comments: [Comment]
   }
     type Auth {
     token: ID!
@@ -21,14 +22,24 @@ const typeDefs = gql`
     avgTemp: Int
     bodyType: String
   }
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
+  }
   type Query {
     users: [User]
     planets: [Planet]
     planet(name: String): Planet
+    comments(username: String): [Comment]
+    comments(commentId: ID!): Comment
   }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addComment(commentText: String!, commentAuthor: String!): Comment
+    removecomment(commentId: ID!): Comment
   }
 `;
 
