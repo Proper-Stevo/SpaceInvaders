@@ -43,11 +43,15 @@ function App() {
           <Routes>
             <Route 
               path="/" 
-              element={<SearchBooks/>} 
+              element={<Home/>} 
+            />
+            <Route 
+              path="/" 
+              element={<Planet/>} 
             />
             <Route 
               path="/saved" 
-              element={<SavedBooks/>} 
+              element={<Login/>} 
             />
             <Route 
               path='*' 
