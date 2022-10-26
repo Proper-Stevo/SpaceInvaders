@@ -52,6 +52,9 @@ const resolvers = {
 
       return comment;
     },
+    removeComment: async (parent, { commentId }) => {
+      return Comment.findOneAndDelete({ _id: commentId });
+    },
   },
 };
 
