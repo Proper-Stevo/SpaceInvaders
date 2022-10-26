@@ -47,11 +47,11 @@ function App() {
             />
             <Route 
               path="/" 
-              element={<Planet/>} 
+              // element={<Planet/>} 
             />
             <Route 
               path="/saved" 
-              element={<Login/>} 
+              // element={<Login/>} 
             />
             <Route 
               path='*' 
