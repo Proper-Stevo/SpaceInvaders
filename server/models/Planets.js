@@ -6,8 +6,8 @@ const planetSchema = new Schema({
         // required: true,
     },
     mass: {
-            type: Number,
-            // required: true
+        type: Number,
+        // required: true
     },
     gravity: {
         type: Number,
@@ -27,10 +27,10 @@ const planetSchema = new Schema({
     },
     comments: [
         {
-          type: Schema.Types.ObjectId,
-          ref: 'Comment',
+            type: Schema.Types.ObjectId,
+            ref: 'Comment',
         },
-      ],
+    ],
 });
 
 const Planets = model('planet', planetSchema);
