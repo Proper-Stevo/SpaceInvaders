@@ -3,7 +3,7 @@ const { Planets , User } = require('../models');
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find({});
+      return User.find({}).populate('comments');
     },
     planets: async () => {
       return Planets.find({});
