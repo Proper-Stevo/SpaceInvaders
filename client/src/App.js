@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 import './App.css';
 
 // Construct our main GraphQL API endpoint
@@ -40,7 +41,8 @@ function App() {
       <Router>
         <>
           <Navbar />
-          <Routes>
+          <Home />
+          {/* <Routes>
             <Route 
               path="/" 
               element={<Home/>} 
@@ -57,7 +59,7 @@ function App() {
               path='*' 
               element={<h1 className="display-2">Wrong page!</h1>}
             />
-          </Routes>
+          </Routes> */}
         </>
       </Router>
     </ApolloProvider>
