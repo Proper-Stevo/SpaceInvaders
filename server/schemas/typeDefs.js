@@ -21,6 +21,7 @@ const typeDefs = gql`
     density: Float
     avgTemp: Int
     bodyType: String
+    moons: [String]
   }
   type Comment {
     _id: ID
