@@ -1,3 +1,4 @@
+const { valueFromAST } = require('graphql');
 const { Schema, model } = require('mongoose');
 
 const planetSchema = new Schema({
@@ -25,6 +26,9 @@ const planetSchema = new Schema({
         type: String,
         // required: true
     },
+    moons: {
+        type: Array,
+    }
 });
 
 const Planets = model('planet', planetSchema);
