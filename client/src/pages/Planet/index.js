@@ -19,7 +19,7 @@ export default function Planet() {
             {/* <image></image> */}
             {/* insert planet facts: mass, gravity, density, avgTemp, bodytype:planet, orbital period, sideral rotation, moons(boolean), distance from sun, yearLength */}
             <PlanetFacts/>
-            
+            {/* <Moon/> */}
             {/* add comment textbox,  */}
             {/* <PlanetComment/> */}
         </div>
