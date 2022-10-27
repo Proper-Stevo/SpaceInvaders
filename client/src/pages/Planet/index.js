@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import './Planet.css';
 
 import PlanetFacts from './PlanetFacts';
+// import Moons from './Moons';
 import PlanetComment from './PlanetComment';
 
 export default function Planet() {
@@ -15,10 +16,10 @@ export default function Planet() {
                 </Card.Body>
             </Card>
             {/* insert planet image */}
-            <image></image>
+            {/* <image></image> */}
             {/* insert planet facts: mass, gravity, density, avgTemp, bodytype:planet, orbital period, sideral rotation, moons(boolean), distance from sun, yearLength */}
-            {/* <PlanetFacts/> */}
-            {/* <Moons/> */}
+            <PlanetFacts/>
+            
             {/* add comment textbox,  */}
             {/* <PlanetComment/> */}
         </div>
