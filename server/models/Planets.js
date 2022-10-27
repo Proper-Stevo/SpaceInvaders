@@ -25,8 +25,7 @@ const planetSchema = new Schema({
         type: String,
         // required: true
     },
-}
-);
+});
 
 const Planets = model('planet', planetSchema);
 
