@@ -1,8 +1,9 @@
 import React from 'react';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
 
 export default function PlanetComment() {
 
@@ -15,23 +16,25 @@ export default function PlanetComment() {
     // import { SAVE_BOOK } from '../utils/mutations';
 
 
-    return !userComment ? (
-        <div className='userCommentCard'>
-            <Card>
-                <Card.Body>User notes go here</Card.Body>
-            </Card>
-            <Button variant="outline-primary">Update Notes</Button>{' '}
-            <Button variant="outline-primary">Delete Notes</Button>{' '}
-        </div>
-    ) : (
+    return !userComment ?  (
+            <div className='userCommentCard'>
+                <Card>
+                    <Card.Body>User notes go here</Card.Body>
+                </Card>
+                <Button variant="outline-primary">Update Notes</Button>{' '}
+                <Button variant="outline-primary">Delete Notes</Button>{' '}
+            </div>
+        ) : (
         <div className='userInputComment'>
-            <FloatingLabel controlId="floatingTextarea2" label="Comments">
+            <InputGroup className="mb-3">
+                <InputGroup.Text id="inputGroup-sizing-default">
+                    Notes
+                </InputGroup.Text>
                 <Form.Control
-                    as="textarea"
-                    placeholder="Leave a comment here"
-                    style={{ height: '100px' }}
+                    aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default"
                 />
-            </FloatingLabel>
+            </InputGroup>
             <Button variant="outline-primary">Save Notes</Button>{' '}
         </div>
     )
