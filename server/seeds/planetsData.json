@@ -1,19 +1,29 @@
 [
     {
         "name": "Mercury",
-        "mass":  3.30114,
+        "mass": 3.30114,
         "gravity": 3.7,
         "density": 5.4291,
         "avgTemp": 440,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 4332.589,
+        "sideralRotation": 9.925,
+        "moons": false,
+        "distanceFromSun": 35000000,
+        "yearLength": 88
     },
     {
         "name": "Venus",
-        "mass":  4.86747,
+        "mass": 4.86747,
         "gravity": 8.87,
         "density": 5.243,
         "avgTemp": 737,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 224.701,
+        "sideralRotation": -5832.5,
+        "moons": false,
+        "distanceFromSun": 67000000,
+        "yearLength": 225
     },
     {
         "name": "Earth",
@@ -21,7 +31,12 @@
         "gravity": 9.8,
         "density": 5.5136,
         "avgTemp": 288,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 365.256,
+        "sideralRotation": 23.9345,
+        "moons": "La Lune",
+        "distanceFromSun": 93000000,
+        "yearLength": 365
     },
     {
         "name": "Mars",
@@ -29,7 +44,19 @@
         "gravity": 3.71,
         "density": 3.9341,
         "avgTemp": 210,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 686.98,
+        "sideralRotation": 24.6229,
+        "moons": [
+            {
+                "moon": "Phobos"
+            },
+            {
+                "moon": "Deïmos"
+            }
+        ],
+        "distanceFromSun": 142000000,
+        "yearLength": 687
     },
     {
         "name": "Jupiter",
@@ -37,7 +64,253 @@
         "gravity": 24.79,
         "density": 1.3262,
         "avgTemp": 165,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 4332.589,
+        "sideralRotation": 9.925,
+        "moons": [
+            {
+                "moon": "Io"
+            },
+            {
+                "moon": "Europe"
+            },
+            {
+                "moon": "Ganymède"
+            },
+            {
+                "moon": "Callisto"
+            },
+            {
+                "moon": "Amalthée"
+            },
+            {
+                "moon": "Himalia"
+            },
+            {
+                "moon": "Élara"
+            },
+            {
+                "moon": "Pasiphaé"
+            },
+            {
+                "moon": "Sinopé"
+            },
+            {
+                "moon": "Lysithéa"
+            },
+            {
+                "moon": "Carmé"
+            },
+            {
+                "moon": "Ananké"
+            },
+            {
+                "moon": "Léda"
+            },
+            {
+                "moon": "Thébé"
+            },
+            {
+                "moon": "Adrastée"
+            },
+            {
+                "moon": "Métis"
+            },
+            {
+                "moon": "Callirrhoé"
+            },
+            {
+                "moon": "Thémisto"
+            },
+            {
+                "moon": "Mégaclité"
+            },
+            {
+                "moon": "Taygété"
+            },
+            {
+                "moon": "Chaldéné"
+            },
+            {
+                "moon": "Harpalyké"
+            },
+            {
+                "moon": "Kalyké"
+            },
+            {
+                "moon": "Iocasté"
+            },
+            {
+                "moon": "Erinomé"
+            },
+            {
+                "moon": "Isonoé"
+            },
+            {
+                "moon": "Praxidyké"
+            },
+            {
+                "moon": "Autonoé"
+            },
+            {
+                "moon": "Thyoné"
+            },
+            {
+                "moon": "Hermippé"
+            },
+            {
+                "moon": "Aitné"
+            },
+            {
+                "moon": "Eurydomé"
+            },
+            {
+                "moon": "Euanthé"
+            },
+            {
+                "moon": "Euporie"
+            },
+            {
+                "moon": "Orthosie"
+            },
+            {
+                "moon": "Spondé"
+            },
+            {
+                "moon": "Calé"
+            },
+            {
+                "moon": "Pasithée"
+            },
+            {
+                "moon": "Hégémone"
+            },
+            {
+                "moon": "Mnémé"
+            },
+            {
+                "moon": "Aoedé"
+            },
+            {
+                "moon": "Thelxinoé"
+            },
+            {
+                "moon": "Arché"
+            },
+            {
+                "moon": "Callichore"
+            },
+            {
+                "moon": "Hélicé"
+            },
+            {
+                "moon": "Carpo"
+            },
+            {
+                "moon": "Eukéladé"
+            },
+            {
+                "moon": "Cyllène"
+            },
+            {
+                "moon": "Coré"
+            },
+            {
+                "moon": "Hersé"
+            },
+            {
+                "moon": "S/2003 J 2"
+            },
+            {
+                "moon": "Euphémé"
+            },
+            {
+                "moon": "S/2003 J 4"
+            },
+            {
+                "moon": "Eiréné"
+            },
+            {
+                "moon": "S/2003 J 9"
+            },
+            {
+                "moon": "S/2003 J 10"
+            },
+            {
+                "moon": "S/2003 J 12"
+            },
+            {
+                "moon": "Philophrosyne"
+            },
+            {
+                "moon": "S/2003 J 16"
+            },
+            {
+                "moon": "S/2003 J 18"
+            },
+            {
+                "moon": "S/2003 J 19"
+            },
+            {
+                "moon": "S/2003 J 23"
+            },
+            {
+                "moon": "Dia"
+            },
+            {
+                "moon": "S/2010 J 1"
+            },
+            {
+                "moon": "S/2010 J 2"
+            },
+            {
+                "moon": "S/2011 J 1"
+            },
+            {
+                "moon": "S/2011 J 2"
+            },
+            {
+                "moon": "S/2017 J 1"
+            },
+            {
+                "moon": "S/2016 J 1"
+            },
+            {
+                "moon": "Valétudo"
+            },
+            {
+                "moon": "S/2017 J 2"
+            },
+            {
+                "moon": "S/2017 J 3"
+            },
+            {
+                "moon": "Pandia"
+            },
+            {
+                "moon": "S/2017 J 5"
+            },
+            {
+                "moon": "S/2017 J 6"
+            },
+            {
+                "moon": "S/2017 J 7"
+            },
+            {
+                "moon": "S/2017 J 8"
+            },
+            {
+                "moon": "S/2017 J 9"
+            },
+            {
+                "moon": "Ersa"
+            },
+            {
+                "moon": "S/2003 J 24"
+            }
+        ],
+        "distanceFromSun": 484000000,
+        "yearLength": 4380
     },
     {
         "name": "Saturn",
@@ -45,7 +318,259 @@
         "gravity": 10.44,
         "density": 0.6871,
         "avgTemp": 134,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 10759.22,
+        "sideralRotation": 10.656,
+        "moons": [
+            {
+                "moon": "Mimas"
+            },
+            {
+                "moon": "Encelade"
+            },
+            {
+                "moon": "Téthys"
+            },
+            {
+                "moon": "Dioné"
+            },
+            {
+                "moon": "Rhéa"
+            },
+            {
+                "moon": "Titan"
+            },
+            {
+                "moon": "Hypérion"
+            },
+            {
+                "moon": "Japet"
+            },
+            {
+                "moon": "Phœbé"
+            },
+            {
+                "moon": "Janus"
+            },
+            {
+                "moon": "Epiméthée"
+            },
+            {
+                "moon": "Hélène"
+            },
+            {
+                "moon": "Télesto"
+            },
+            {
+                "moon": "Calypso"
+            },
+            {
+                "moon": "Atlas"
+            },
+            {
+                "moon": "Prométhée"
+            },
+            {
+                "moon": "Pandore"
+            },
+            {
+                "moon": "Pan"
+            },
+            {
+                "moon": "Ymir"
+            },
+            {
+                "moon": "Paaliaq"
+            },
+            {
+                "moon": "Tarvos"
+            },
+            {
+                "moon": "Ijiraq"
+            },
+            {
+                "moon": "Suttungr"
+            },
+            {
+                "moon": "Kiviuq"
+            },
+            {
+                "moon": "Mundilfari"
+            },
+            {
+                "moon": "Albiorix"
+            },
+            {
+                "moon": "Skathi"
+            },
+            {
+                "moon": "Erriapo"
+            },
+            {
+                "moon": "Siarnaq"
+            },
+            {
+                "moon": "Thrymr"
+            },
+            {
+                "moon": "Narvi"
+            },
+            {
+                "moon": "Méthone"
+            },
+            {
+                "moon": "Pallène"
+            },
+            {
+                "moon": "Pollux"
+            },
+            {
+                "moon": "Daphnis"
+            },
+            {
+                "moon": "Aegir"
+            },
+            {
+                "moon": "Bebhionn"
+            },
+            {
+                "moon": "Bergelmir"
+            },
+            {
+                "moon": "Bestla"
+            },
+            {
+                "moon": "Farbauti"
+            },
+            {
+                "moon": "Fenrir"
+            },
+            {
+                "moon": "Fornjot"
+            },
+            {
+                "moon": "Hati"
+            },
+            {
+                "moon": "Hyrrokkin"
+            },
+            {
+                "moon": "Kari"
+            },
+            {
+                "moon": "Loge"
+            },
+            {
+                "moon": "Skoll"
+            },
+            {
+                "moon": "Surtur"
+            },
+            {
+                "moon": "Anthé"
+            },
+            {
+                "moon": "Jarnsaxa"
+            },
+            {
+                "moon": "Greip"
+            },
+            {
+                "moon": "Tarqeq"
+            },
+            {
+                "moon": "Égéon"
+            },
+            {
+                "moon": "S/2004 S 7"
+            },
+            {
+                "moon": "S/2004 S 12"
+            },
+            {
+                "moon": "S/2004 S 13"
+            },
+            {
+                "moon": "S/2004 S 17"
+            },
+            {
+                "moon": "S/2006 S 1"
+            },
+            {
+                "moon": "S/2006 S 3"
+            },
+            {
+                "moon": "S/2007 S 2"
+            },
+            {
+                "moon": "S/2007 S 3"
+            },
+            {
+                "moon": "S/2009 S 1"
+            },
+            {
+                "moon": "S/2004 S 22"
+            },
+            {
+                "moon": "S/2004 S 21"
+            },
+            {
+                "moon": "S/2004 S 20"
+            },
+            {
+                "moon": "S/2004 S 23"
+            },
+            {
+                "moon": "S/2004 S 24"
+            },
+            {
+                "moon": "S/2004 S 25"
+            },
+            {
+                "moon": "S/2004 S 26"
+            },
+            {
+                "moon": "S/2004 S 27"
+            },
+            {
+                "moon": "S/2004 S 28"
+            },
+            {
+                "moon": "S/2004 S 29"
+            },
+            {
+                "moon": "S/2004 S 30"
+            },
+            {
+                "moon": "S/2004 S 31"
+            },
+            {
+                "moon": "S/2004 S 32"
+            },
+            {
+                "moon": "S/2004 S 33"
+            },
+            {
+                "moon": "S/2004 S 34"
+            },
+            {
+                "moon": "S/2004 S 35"
+            },
+            {
+                "moon": "S/2004 S 36"
+            },
+            {
+                "moon": "S/2004 S 37"
+            },
+            {
+                "moon": "S/2004 S 38"
+            },
+            {
+                "moon": "S/2004 S 39"
+            }
+        ],
+        "distanceFromSun": 889000000,
+        "yearLength": 10585
     },
     {
         "name": "Uranus",
@@ -53,7 +578,94 @@
         "gravity": 8.87,
         "density": 1.27,
         "avgTemp": 76,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 30685.4,
+        "sideralRotation": -17.24,
+        "moons": [
+            {
+                "moon": "Ariel"
+            },
+            {
+                "moon": "Umbriel"
+            },
+            {
+                "moon": "Titania"
+            },
+            {
+                "moon": "Obéron"
+            },
+            {
+                "moon": "Miranda"
+            },
+            {
+                "moon": "Cordélia"
+            },
+            {
+                "moon": "Ophélie"
+            },
+            {
+                "moon": "Bianca"
+            },
+            {
+                "moon": "Cressida"
+            },
+            {
+                "moon": "Desdémone"
+            },
+            {
+                "moon": "Juliette"
+            },
+            {
+                "moon": "Portia"
+            },
+            {
+                "moon": "Rosalinde"
+            },
+            {
+                "moon": "Belinda"
+            },
+            {
+                "moon": "Puck"
+            },
+            {
+                "moon": "Caliban"
+            },
+            {
+                "moon": "Sycorax"
+            },
+            {
+                "moon": "Prospero"
+            },
+            {
+                "moon": "Setebos"
+            },
+            {
+                "moon": "Stephano"
+            },
+            {
+                "moon": "Trinculo"
+            },
+            {
+                "moon": "Francisco"
+            },
+            {
+                "moon": "Margaret"
+            },
+            {
+                "moon": "Ferdinand"
+            },
+            {
+                "moon": "Perdita"
+            },
+            {
+                "moon": "Mab"
+            },
+            {
+                "moon": "Cupid"
+            }
+        ],
+        "distanceFromSun": 1790000000,
+        "yearLength": 30660
     },
     {
         "name": "Neptune",
@@ -61,7 +673,55 @@
         "gravity": 11.15,
         "density": 1.638,
         "avgTemp": 55,
-        "bodyType": "Planet"
+        "bodyType": "Planet",
+        "sideralOrbit": 60189,
+        "sideralRotation": 16.11,
+        "moons": [
+            {
+                "moon": "Triton"
+            },
+            {
+                "moon": "Néreïde"
+            },
+            {
+                "moon": "Naïade"
+            },
+            {
+                "moon": "Thalassa"
+            },
+            {
+                "moon": "Despina"
+            },
+            {
+                "moon": "Galatée"
+            },
+            {
+                "moon": "Larissa"
+            },
+            {
+                "moon": "Protée"
+            },
+            {
+                "moon": "Halimède"
+            },
+            {
+                "moon": "Psamathée"
+            },
+            {
+                "moon": "Sao"
+            },
+            {
+                "moon": "Laomédie"
+            },
+            {
+                "moon": "Néso"
+            },
+            {
+                "moon": "Hippocampe"
+            }
+        ],
+        "distanceFromSun": 2880000000,
+        "yearLength": 60225
     },
     {
         "name": "Pluto",
@@ -69,6 +729,27 @@
         "gravity": 0.62,
         "density": 1.89,
         "avgTemp": 44,
-        "bodyType": "Dwarf-Planet"
+        "bodyType": "Dwarf-Planet",
+        "sideralOrbit": 90465,
+        "sideralRotation": -153.2928,
+        "moons": [
+            {
+            "moon": "Charon"
+            },
+            {
+            "moon": "Nix"
+            },
+            {
+            "moon": "Hydra"
+            },
+            {
+            "moon": "Kerberos"
+            },
+            {
+            "moon": "Styx"
+            }
+            ],
+            "distanceFromSun": 3670000000,
+            "yearLength": 90520
     }
 ]
