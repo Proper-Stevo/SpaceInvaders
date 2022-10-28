@@ -42,14 +42,14 @@ function App() {
       <Router>
         <>
           <Navbar />
-          <Planet />
-          {/* <Routes>
+          {/* <Planet /> */}
+          <Routes>
             <Route 
               path="/" 
               element={<Home/>} 
             />
             <Route 
-              path="/" 
+              path="/planet/:planetname" 
               element={<Planet/>} 
             />
             <Route 
@@ -60,7 +60,7 @@ function App() {
               path='*' 
               element={<h1 className="display-2">Wrong page!</h1>}
             />
-          </Routes> */}
+          </Routes>
         </>
       </Router>
     </ApolloProvider>
