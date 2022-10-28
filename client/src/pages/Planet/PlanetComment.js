@@ -5,9 +5,8 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 
-import { useMutation } from '@apollo/client';
-
-import { SAVE_COMMENT, REMOVE_COMMENT } from '../utils/mutations';
+import { useMutation, useQuery } from '@apollo/client';
+import { SAVE_COMMENT, REMOVE_COMMENT } from '../../utils/mutations';
 import { QUERY_USERS } from '../../utils/queries';
 
 
@@ -15,39 +14,49 @@ export default function PlanetComment() {
 
     // define userComment through query
     // mutations to update comment
-    const { users, data } = useQuery(QUERY_USERS);
+    const { loading, data } = useQuery(QUERY_USERS);
     const [removeComment, { error }] = useMutation(REMOVE_COMMENT);
+    // const [addComment, { error }] = useMutation(SAVE_COMMENT);
 
-    const userData = data?.me || {};
+    //? userData is data pulled from users or empty object
+    const userComment = data?.users || {};
 
-    // create function that accepts the book's mongo _id value as param and deletes the book from the database
+    // * --------------------------------------------------
+
+    // create function that accepts the comment's mongo _id value as param and deletes the comment
     const handleDeleteComment = async (commentId) => {
         // get token
         const token = Auth.loggedIn() ? Auth.getToken() : null;
-
+        // check login
         if (!token) {
             return false;
         }
 
+        // in data, remove comment by commentId
         try {
             const { data } = await removeComment({
                 variables: { commentId },
             });
 
-            // upon success, remove commet's id from localStorage
-            // ! FIX
+            // ! FIX - delete comment by id
             removeCommentId(commentId);
         } catch (err) {
             console.error(err);
         }
     };
 
+    // * ----------------------------------------------------
+
+    //  TODO: save comment function
+
+    // * ----------------------------------------------------
+
     if (loading) {
         return <h2>LOADING...</h2>;
     }
 
 
-    // ! FIX IF STATEMENT
+    // ! FIX IF STATEMENT - check if usercomment exists
     return userComment ? (
         <div className='userCommentCard'>
             <Card>
