@@ -1,12 +1,15 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-
+// DATA BY PLANET NAME
 // import { useMutation } from '@apollo/client';
-// // MUTATION/QUERY????
+
 // import { PLANET_FACTS } from '../utils/mutations';
 // ! FIX IMPORT DATA
 
 export default function Planet() {
+
+
+    
     return (
         <div className='planetFactsContainer'>
             <Card style={{ width: '18rem' }}>
