@@ -7,6 +7,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Login from './pages/Login'
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import './App.css';
@@ -42,7 +43,6 @@ function App() {
       <Router>
         <>
           <Navbar />
-          {/* <Planet /> */}
           <Routes>
             <Route 
               path="/" 
@@ -53,7 +53,7 @@ function App() {
               element={<Planet/>} 
             />
             <Route 
-              path="/saved" 
+              path="/login" 
               element={<Login/>} 
             />
             <Route 

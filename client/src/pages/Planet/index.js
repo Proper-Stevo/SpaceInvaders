@@ -29,6 +29,7 @@ export default function Planet() {
             {/* add comment textbox,  */}
             {/* <PlanetComment/> */}
         <PlanetSounds planet={planetname} />
+            <PlanetComment/>
         </div>
         
     )
