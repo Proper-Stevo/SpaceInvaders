@@ -2,7 +2,9 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 // DATA BY PLANET NAME
 // import { useMutation } from '@apollo/client';
-// import { QUERY_PLANET } from '../utils/mutations';
+
+// import { PLANET_FACTS } from '../utils/mutations';
+// ! FIX IMPORT DATA
 
 export default function Planet() {
 
