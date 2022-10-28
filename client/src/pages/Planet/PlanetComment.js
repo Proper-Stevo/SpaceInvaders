@@ -5,6 +5,9 @@ import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 
+    // import { useMutation } from '@apollo/client';
+    // import { SAVE_BOOK } from '../utils/mutations';
+
 export default function PlanetComment() {
 
     // define userComment through query
@@ -12,8 +15,7 @@ export default function PlanetComment() {
 
     // use state  (change active btwn cards&textarea)
     // use mutations (add/update/delete comment)
-    // import { useMutation } from '@apollo/client';
-    // import { SAVE_BOOK } from '../utils/mutations';
+
 
 
     return !userComment ?  (
