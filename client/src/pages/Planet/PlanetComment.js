@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 
 import { useMutation, useQuery } from '@apollo/client';
-import { SAVE_COMMENT, REMOVE_COMMENT } from '../utils/mutations';
+import { SAVE_COMMENT, REMOVE_COMMENT } from '../../utils/mutations';
 import { QUERY_USERS } from '../../utils/queries';
 
 
@@ -19,7 +19,7 @@ export default function PlanetComment() {
     // const [addComment, { error }] = useMutation(SAVE_COMMENT);
 
     //? userData is data pulled from users or empty object
-    const userData = data?.users || {};
+    const userComment = data?.users || {};
 
     // * --------------------------------------------------
 
