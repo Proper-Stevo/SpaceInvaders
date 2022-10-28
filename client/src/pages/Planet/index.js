@@ -2,14 +2,22 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './Planet.css';
 
-
+// COMPONENTS
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_PLANET } from '../../utils/queries';
 
-export default function Planet() {
-    const audio = new Audio ('./assets/earthSound.mp3');
+
+export default function Planet(planet) {
+
+    const { loading, data } = useQuery(QUERY_PLANET);
+    // userData is data pulled from users or empty object
+    const planetData = data?.planet || {};
+
+    const audio = new Audio('./assets/earthSound.mp3');
 
     const start = () => {
         audio.play();
@@ -20,7 +28,7 @@ export default function Planet() {
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Subtitle className="mb-2 text-muted">Planet</Card.Subtitle>
-                    <Card.Title>Jupiter</Card.Title>
+                    <Card.Title>{planetData.name}</Card.Title>
                 </Card.Body>
             </Card>
             <button onClick={start}>Button</button>
@@ -30,8 +38,9 @@ export default function Planet() {
             {/* <PlanetFacts/> */}
             {/* <Moon/> */}
             {/* add comment textbox,  */}
-            <PlanetComment/>
+            <PlanetComment
+            planet={planet}/>
         </div>
-        
+
     )
 };

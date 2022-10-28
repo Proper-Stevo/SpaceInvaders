@@ -43,7 +43,6 @@ function App() {
       <Router>
         <>
           <Navbar />
-          <Planet />
           <Routes>
             <Route 
               path="/" 

@@ -10,40 +10,44 @@ import { SAVE_COMMENT, REMOVE_COMMENT } from '../../utils/mutations';
 import { QUERY_USERS } from '../../utils/queries';
 
 
-export default function PlanetComment() {
+export default function PlanetComment(planet) {
 
     // define userComment through query
     // mutations to update comment
     const { loading, data } = useQuery(QUERY_USERS);
+    // userData is data pulled from users or empty object
+    const userComment = data?.users || {};
+
+
     const [removeComment, { error }] = useMutation(REMOVE_COMMENT);
     // const [addComment, { error }] = useMutation(SAVE_COMMENT);
+    // create new comment with state variable
+    // const [userComment, setUserComment] = useState({ commentText: ''});
 
-    //? userData is data pulled from users or empty object
-    const userComment = data?.users.comments || {};
-
+    
     // * --------------------------------------------------
 
     // create function that accepts the comment's mongo _id value as param and deletes the comment
-    const handleDeleteComment = async (commentId) => {
-        // get token
-        const token = Auth.loggedIn() ? Auth.getToken() : null;
-        // check login
-        if (!token) {
-            return false;
-        }
+    // const handleDeleteComment = async (commentId) => {
+    //     // get token
+    //     const token = Auth.loggedIn() ? Auth.getToken() : null;
+    //     // check login
+    //     if (!token) {
+    //         return false;
+    //     }
 
-        // in data, remove comment by commentId
-        try {
-            const { data } = await removeComment({
-                variables: { commentId },
-            });
+    //     // in data, remove comment by commentId
+    //     try {
+    //         const { data } = await removeComment({
+    //             variables: { commentId },
+    //         });
 
-            // ! FIX - delete comment by id
-            removeCommentId(commentId);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    //         // ! FIX - delete comment by id
+    //         removeCommentId(commentId);
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };
 
     // * ----------------------------------------------------
 
@@ -73,11 +77,11 @@ export default function PlanetComment() {
     ) : (
         <div className='userCommentCard'>
             <Card>
-                <Card.Body>{userComment.commentText}</Card.Body>
+                <Card.Body>{userComment.comments}</Card.Body>
             </Card>
             {/* <Button variant="outline-primary">Update Notes</Button>{' '} */}
             <Button variant="outline-primary">Delete Notes</Button>{' '}
         </div>
-    )
+    );
 
 };
