@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
+import PlanetSounds from './planetSounds';
+import { useParams } from 'react-router-dom';
 import './Planet.css';
 
 
@@ -7,14 +9,8 @@ import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
 
-
 export default function Planet() {
-    const audio = new Audio ('./assets/earthSound.mp3');
-
-    const start = () => {
-        audio.play();
-    }
-
+    const {planetname} = useParams();
     return (
         <div className='planetContainer'>
             <Card style={{ width: '18rem' }}>
@@ -23,15 +19,20 @@ export default function Planet() {
                     <Card.Title>Jupiter</Card.Title>
                 </Card.Body>
             </Card>
-            <button onClick={start}>Button</button>
             {/* insert planet image */}
             {/* <image></image> */}
             {/* insert planet facts: mass, gravity, density, avgTemp, bodytype:planet, orbital period, sideral rotation, moons(boolean), distance from sun, yearLength */}
             {/* <PlanetFacts/> */}
             {/* <Moon/> */}
             {/* add comment textbox,  */}
+            {/* <PlanetComment/> */}
+        <PlanetSounds planet={planetname} />
             <PlanetComment/>
         </div>
         
     )
 };
+
+
+
+
