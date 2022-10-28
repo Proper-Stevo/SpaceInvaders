@@ -19,7 +19,7 @@ export default function PlanetComment() {
     // const [addComment, { error }] = useMutation(SAVE_COMMENT);
 
     //? userData is data pulled from users or empty object
-    const userComment = data?.users || {};
+    const userComment = data?.users.comments || {};
 
     // * --------------------------------------------------
 
@@ -57,15 +57,7 @@ export default function PlanetComment() {
 
 
     // ! FIX IF STATEMENT - check if usercomment exists
-    return userComment ? (
-        <div className='userCommentCard'>
-            <Card>
-                <Card.Body>User notes go here</Card.Body>
-            </Card>
-            {/* <Button variant="outline-primary">Update Notes</Button>{' '} */}
-            <Button variant="outline-primary">Delete Notes</Button>{' '}
-        </div>
-    ) : (
+    return !userComment ? (
         <div className='userInputComment'>
             <InputGroup className="mb-3">
                 <InputGroup.Text id="inputGroup-sizing-default">
@@ -78,5 +70,14 @@ export default function PlanetComment() {
             </InputGroup>
             <Button variant="outline-primary">Save Notes</Button>{' '}
         </div>
+    ) : (
+        <div className='userCommentCard'>
+            <Card>
+                <Card.Body>{userComment.commentText}</Card.Body>
+            </Card>
+            {/* <Button variant="outline-primary">Update Notes</Button>{' '} */}
+            <Button variant="outline-primary">Delete Notes</Button>{' '}
+        </div>
     )
+
 };
