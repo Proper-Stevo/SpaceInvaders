@@ -60,6 +60,7 @@ export default function App() {
   
   return (
     <ApolloProvider client={client}>
+      
       <Router>
     <>
       <Canvas camera={{ position: [20, 80, 35], fov: 45 }}>
