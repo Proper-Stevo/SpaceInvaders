@@ -9,8 +9,6 @@ import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
 
-
-
 export default function Planet() {
     const {planetname} = useParams();
     return (
