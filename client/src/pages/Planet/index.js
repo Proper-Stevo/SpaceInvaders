@@ -30,7 +30,7 @@ export default function Planet() {
             {/* <PlanetFacts/> */}
             {/* <Moon/> */}
             {/* add comment textbox,  */}
-            {/* <PlanetComment/> */}
+            <PlanetComment/>
         </div>
         
     )
