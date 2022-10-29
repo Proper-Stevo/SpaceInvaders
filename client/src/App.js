@@ -44,14 +44,13 @@ function App() {
       <Router>
         <>
           <Navbar />
-          <Planet />
           <Routes>
             <Route 
               path="/" 
               element={<Home/>} 
             />
             <Route 
-              path="/" 
+              path="/planet/:planetname" 
               element={<Planet/>} 
             />
             <Route 
