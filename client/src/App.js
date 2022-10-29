@@ -16,10 +16,6 @@ import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import planetData from "./planetData";
 import "./styles.css";
-import img from './assets/images/sun.jpg';
-import Mercury from './components/Mercury';
-
-
 
 
 // Construct our main GraphQL API endpoint
@@ -46,39 +42,50 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-
-
-
-
-
-
-
-
-
 export default function App() {
-  
   return (
     <ApolloProvider client={client}>
-      
+
       <Router>
-    <>
-      <Canvas camera={{ position: [20, 80, 35], fov: 45 }}>
-        <Sun />
-        {/* <Mercury /> */}
-        <Sky />
-        <Stars />
-        {planetData.map((planet) => (
-          <Planet planet={planet} key={planet.id} />
-        ))}
-        <Lights />
-        <OrbitControls />
-      </Canvas>
-    </>
-    </Router>
+        <>
+          
+            {/* <Navbar />
+            <Planet />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/"
+                element={<Planet />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path='*'
+                element={<h1 className="display-2">Wrong page!</h1>}
+              />
+            </Routes> */}
+            <Canvas camera={{ position: [20, 80, 35], fov: 45 }}>
+            <Sun />
+            <Sky />
+            <Stars />
+            {planetData.map((planet) => (
+              <Planet planet={planet} key={planet.id} />
+            ))}
+            <Lights />
+            <OrbitControls />
+          </Canvas>
+        </>
+        </Router>
     </ApolloProvider>
   );
 }
+
+
 function Sun() {
   return (
     <mesh>
@@ -87,18 +94,6 @@ function Sun() {
     </mesh>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 function Planet({ planet: { color, xRadius, zRadius, size } }) {
   const randomNum = Math.random();
