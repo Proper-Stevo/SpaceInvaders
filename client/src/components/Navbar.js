@@ -6,6 +6,8 @@ import { Link, Route } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../pages/Signup';
 import LoginForm from '../pages/Login';
+import './Navbar.css'
+
 
 import Auth from '../utils/auth';
 
@@ -15,13 +17,13 @@ export default function Navigation () {
 
   return (
     <>
-    <Navbar bg='dark' variant='dark' expand='lg'>
+    <Navbar className='nav-container'>
       <Container fluid>
-        <Navbar.Brand as={Link} to='/'>
+        <Navbar.Brand as={Link} to='/' className='nav-title'>
           Orbital Odyssey
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar' />
-        <Navbar.Collapse id='navbar'>
+        <Navbar.Collapse id='navbar' bsPrefix='navbar-collapse'>
           <Nav className='ml-auto'>
             {/* add 404 page */}
             {/* <Route 
@@ -40,12 +42,12 @@ export default function Navigation () {
                 <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
               </>
             ) : (
-              <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+              <Nav.Link className='login-home-link' onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
             )}
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar> *
+    </Navbar> 
     {/* set modal data up */}
     <Modal
       size='lg'
