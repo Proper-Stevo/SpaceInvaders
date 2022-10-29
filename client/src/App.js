@@ -47,9 +47,9 @@ export default function App() {
     <ApolloProvider client={client}>
 
       <Router>
-        <>
-          
-            {/* <Navbar />
+        <div style={{ width: "100vw", height: "100vh" }}>
+
+          {/* <Navbar />
             <Planet />
             <Routes>
               <Route
@@ -69,7 +69,7 @@ export default function App() {
                 element={<h1 className="display-2">Wrong page!</h1>}
               />
             </Routes> */}
-            <Canvas camera={{ position: [20, 80, 35], fov: 45 }}>
+          <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
             <Sun />
             <Sky />
             <Stars />
@@ -79,8 +79,8 @@ export default function App() {
             <Lights />
             <OrbitControls />
           </Canvas>
-        </>
-        </Router>
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
@@ -100,7 +100,7 @@ function Planet({ planet: { color, xRadius, zRadius, size } }) {
   const planetRef = React.useRef();
 
   useFrame(({ clock }) => {
-    const t = randomNum * clock.getElapsedTime();
+    const t = randomNum/2 * clock.getElapsedTime();
     const x = xRadius * Math.sin(t);
     const z = zRadius * Math.cos(t);
     planetRef.current.position.x = x;
