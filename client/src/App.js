@@ -10,8 +10,8 @@ import { setContext } from '@apollo/client/link/context';
 import Login from './pages/Login'
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import './App.css';
 import Planet from './pages/Planet';
+import './App.css';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -37,6 +37,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// TODO: const planet = user selects a planet, get name, pass all planet data by name
+// ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
+// keep outside
+// GET DATA ---
+// import { useQuery } from '@apollo/client';
+// import { QUERY_PLANET } from '../../utils/queries';
+
+//  PASS DATA -- add below in function App():
+// const planet = data?.planet || {};
+//  <Planet planet={planet}/>
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -48,15 +59,17 @@ function App() {
             <Route 
               path="/" 
               element={<Home/>} 
+              name="home"
             />
             <Route 
               path="/planet" 
-              element={<Planet/>} 
+              element={<Planet />} 
             />
             <Route 
               path="/login" 
               element={<Login/>} 
             />
+            {/* ADD A 404 PAGE?? (PREMADE) */}
             <Route 
               path='*' 
               element={<h1 className="display-2">Wrong page!</h1>}

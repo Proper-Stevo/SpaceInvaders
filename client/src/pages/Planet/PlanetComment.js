@@ -15,9 +15,13 @@ export default function PlanetComment(planet) {
     // define userComment through query
     // mutations to update comment
     const { loading, data } = useQuery(QUERY_USERS);
-    // userData is data pulled from users or empty object
+    // userData is data pulled from users or empty object to load corresponding comment for each planet
     const userComment = data?.users || {};
 
+    // might need something like this to render proper note
+    // if (planet.name == userComment.comments.planet) {
+    //     // render comment
+    // }
 
     const [removeComment, { error }] = useMutation(REMOVE_COMMENT);
     // const [addComment, { error }] = useMutation(SAVE_COMMENT);
@@ -25,7 +29,7 @@ export default function PlanetComment(planet) {
     // const [userComment, setUserComment] = useState({ commentText: ''});
 
     
-    // * --------------------------------------------------
+    // * DELETE NOTES---------------------------------------
 
     // create function that accepts the comment's mongo _id value as param and deletes the comment
     // const handleDeleteComment = async (commentId) => {
@@ -49,20 +53,23 @@ export default function PlanetComment(planet) {
     //     }
     // };
 
-    // * ----------------------------------------------------
+    // * SAVE NOTES------------------------------------------
 
     //  TODO: save comment function
 
-    // * ----------------------------------------------------
+    // * RENDER----------------------------------------------
 
     if (loading) {
         return <h2>LOADING...</h2>;
     }
 
+    // ! if user has a comment for planet, then render comment,
+    // ! otherwise render empty text box with save/add note button - if statment line 22
 
     // ! FIX IF STATEMENT - check if usercomment exists
     return !userComment ? (
         <div className='userInputComment'>
+            <h2 className='notes-title'>{planet.name} Notes</h2>
             <InputGroup className="mb-3">
                 <InputGroup.Text id="inputGroup-sizing-default">
                     Notes
@@ -76,6 +83,7 @@ export default function PlanetComment(planet) {
         </div>
     ) : (
         <div className='userCommentCard'>
+            <h2 className='notes-title'>{planet.name} Notes</h2>
             <Card>
                 <Card.Body>{userComment.comments}</Card.Body>
             </Card>
