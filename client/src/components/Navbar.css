@@ -1,16 +1,32 @@
+:root {
+    --titleText: 'Megrim', cursive;
+    --fontText: 'Unica One', cursive;
+    --starText: 'Codystar', cursive;
+}
+
 .nav-container {
     height: 100px;
-
+    background-color: (108, 122, 137, .7);
+    font-family: var(--fontText);
 }
 
 .nav-title {
     font-size: 40px;
+    font-family: var(--titleText);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    max-width: fit-content;
 }
 
 .login-home-link {
     float: right;
+    text-decoration: none;
+    color: white;
+
 }
 
 .logged-in-links {
-
+    text-decoration: none;
+    color: white;
 }

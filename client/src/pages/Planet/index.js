@@ -1,35 +1,35 @@
-import React, {useState} from 'react';
-import Card from 'react-bootstrap/Card';
-import PlanetSounds from './planetSounds';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 import './Planet.css';
 
-// COMPONENTS
+//* COMPONENTS---------------------------
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
+import PlanetSounds from './planetSounds';
 
 
 import { useQuery } from '@apollo/client';
 import { QUERY_PLANET } from '../../utils/queries';
 
 // get props from app.js when user selects a planet
-export default function Planet(planet) {
+// export default function Planet(planet) {
 
-    // !
-    const { loading, data } = useQuery(QUERY_PLANET);
-    // userData is data pulled from users or empty object
-    const planetData = data?.planet || {};
+//     // !
+//     const { loading, data } = useQuery(QUERY_PLANET);
+//     // userData is data pulled from users or empty object
+//     const planetData = data?.planet || {};
 
-    const audio = new Audio('./assets/earthSound.mp3');
+//     const audio = new Audio('./assets/earthSound.mp3');
 
-    const start = () => {
-        audio.play();
-    }
+//     const start = () => {
+//         audio.play();
+//     }
 
 
 export default function Planet() {
-    const {planetname} = useParams();
+    const { planetname } = useParams();
 
     return (
         <div className='planetContainer'>
@@ -45,20 +45,14 @@ export default function Planet() {
                 planet={planet}/> */}
             {/* <Moon
                 planet={planet}/> */}
-            {/* add comment textbox,  */}
-
             <PlanetComment
-            planet={planet}/>
+                planet={planet} />
 
-            {/* <PlanetComment/> */}
-        <PlanetSounds planet={planetname} />
-            <PlanetComment/>
+            <PlanetSounds planet={planetname} />
+
 
         </div>
 
-    )
+    );
 };
-
-
-
 

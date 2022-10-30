@@ -17,6 +17,7 @@ import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import planetData from "./planetData";
 import "./styles.css";
+import NotFoundErr from './pages/NotFoundErr';
 
 
 // Construct our main GraphQL API endpoint
@@ -64,12 +65,12 @@ export default function App() {
 
       <Router>
 
-          
-          
+
+
         <div style={{ width: "100vw", height: "100vh" }}>
-
-
-          {/* <Navbar />
+<Navbar />
+    <NotFoundErr/>
+          {/* 
             <Planet />
             <Routes>
               <Route
@@ -78,19 +79,18 @@ export default function App() {
               />
               <Route
                 path="/"
-                element={<Planet />}
+                element={<Planet planet={planet} />}
               />
               <Route
                 path="/login"
                 element={<Login />}
               />
-                {/* ADD A 404 PAGE?? (PREMADE) */}
-              {/* <Route
+              <Route
                 path='*'
-                element={<h1 className="display-2">Wrong page!</h1>}
+                element={<NotFound/>}
               />
             </Routes> */}
-          <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
+          {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
             <Sun />
             <Sky />
             <Stars />
@@ -99,7 +99,7 @@ export default function App() {
             ))}
             <Lights />
             <OrbitControls />
-          </Canvas>
+          </Canvas> */}
         </div>
       </Router>
     </ApolloProvider>
@@ -121,7 +121,7 @@ function Planet({ planet: { color, xRadius, zRadius, size } }) {
   const planetRef = React.useRef();
 
   useFrame(({ clock }) => {
-    const t = randomNum/2 * clock.getElapsedTime();
+    const t = randomNum / 2 * clock.getElapsedTime();
     const x = xRadius * Math.sin(t);
     const z = zRadius * Math.cos(t);
     planetRef.current.position.x = x;
