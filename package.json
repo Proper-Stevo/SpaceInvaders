@@ -19,7 +19,8 @@
     "dependencies": {
         "apollo-server-express": "^3.10.3",
         "express": "^4.17.2",
+        "framer-motion-3d": "^7.6.2",
         "graphql": "^15.8.0",
-        "react-sound": "^1.2.0"
+        "three": "^0.146.0"
     }
 }
