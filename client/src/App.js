@@ -85,7 +85,7 @@ export default function App() {
                 element={<Login />}
               />
                 {/* ADD A 404 PAGE?? (PREMADE) */}
-              <Route
+              {/* <Route
                 path='*'
                 element={<h1 className="display-2">Wrong page!</h1>}
               />
