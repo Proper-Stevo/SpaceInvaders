@@ -9,6 +9,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+
 import './App.css';
 // import Planet from './pages/Planet';
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
@@ -42,12 +43,31 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+// TODO: const planet = user selects a planet, get name, pass all planet data by name
+// ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
+// keep outside
+// GET DATA ---
+// import { useQuery } from '@apollo/client';
+// import { QUERY_PLANET } from '../../utils/queries';
+
+//  PASS DATA -- add below in function App():
+// const planet = data?.planet || {};
+//  <Planet planet={planet}/>
+
+
+
 export default function App() {
+
   return (
     <ApolloProvider client={client}>
 
       <Router>
+
+          
+          
         <div style={{ width: "100vw", height: "100vh" }}>
+
 
           {/* <Navbar />
             <Planet />
@@ -64,6 +84,7 @@ export default function App() {
                 path="/login"
                 element={<Login />}
               />
+                {/* ADD A 404 PAGE?? (PREMADE) */}
               <Route
                 path='*'
                 element={<h1 className="display-2">Wrong page!</h1>}

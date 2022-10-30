@@ -1,12 +1,10 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-// DATA BY PLANET NAME
-// import { useMutation } from '@apollo/client';
 
-// import { PLANET_FACTS } from '../utils/mutations';
-// ! FIX IMPORT DATA
+// ! FIX IMPORT DATA - NEED TO PASSDOWN INFO 
+// !    THROUGH APP JS ONCE USERS SELECTS A PLANET
 
-export default function Planet() {
+export default function Planet(planet) {
 
 
     
