@@ -62,8 +62,8 @@ function App() {
               name="home"
             />
             <Route 
-              path="/planet" 
-              element={<Planet />} 
+              path="/planet/:planetname" 
+              element={<Planet/>} 
             />
             <Route 
               path="/login" 
