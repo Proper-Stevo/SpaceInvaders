@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
+import PlanetSounds from './planetSounds';
+import { useParams } from 'react-router-dom';
 import './Planet.css';
 
 // COMPONENTS
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
+
 
 import { useQuery } from '@apollo/client';
 import { QUERY_PLANET } from '../../utils/queries';
@@ -24,6 +27,10 @@ export default function Planet(planet) {
         audio.play();
     }
 
+
+export default function Planet() {
+    const {planetname} = useParams();
+
     return (
         <div className='planetContainer'>
             <Card style={{ width: '18rem' }}>
@@ -32,7 +39,6 @@ export default function Planet(planet) {
                     <Card.Title>{planetData.name}</Card.Title>
                 </Card.Body>
             </Card>
-            <button onClick={start}>Button</button>
             {/* insert planet image */}
             {/* pass through planet data */}
             {/* <PlanetFacts
@@ -40,9 +46,19 @@ export default function Planet(planet) {
             {/* <Moon
                 planet={planet}/> */}
             {/* add comment textbox,  */}
+
             <PlanetComment
             planet={planet}/>
+
+            {/* <PlanetComment/> */}
+        <PlanetSounds planet={planetname} />
+            <PlanetComment/>
+
         </div>
 
     )
 };
+
+
+
+
