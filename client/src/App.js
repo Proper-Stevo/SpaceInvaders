@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
@@ -7,11 +7,18 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Login from './pages/Login'
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Planet from './pages/Planet';
+
 import './App.css';
+// import Planet from './pages/Planet';
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, Sky, Stars } from "@react-three/drei";
+import * as THREE from "three";
+import planetData from "./planetData";
+import "./styles.css";
+import NotFoundErr from './pages/NotFoundErr';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -37,6 +44,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 // TODO: const planet = user selects a planet, get name, pass all planet data by name
 // ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
 // keep outside
@@ -48,39 +56,113 @@ const client = new ApolloClient({
 // const planet = data?.planet || {};
 //  <Planet planet={planet}/>
 
-function App() {
+
+
+export default function App() {
+
   return (
     <ApolloProvider client={client}>
-      
-      <Router>
-        <>
-          <Navbar />
-          <Routes>
-            <Route 
-              path="/" 
-              element={<Home/>} 
-              name="home"
-            />
-            <Route 
-              path="/planet/:planetname" 
-              element={<Planet/>} 
-            />
-            <Route 
-              path="/login" 
-              element={<Login/>} 
-            />
-            {/* ADD A 404 PAGE?? (PREMADE) */}
-            <Route 
-              path='*' 
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-          </Routes>
-        </>
-      </Router>
 
-      //*test
+      <Router>
+
+
+
+        <div style={{ width: "100vw", height: "100vh" }}>
+<Navbar />
+    <NotFoundErr/>
+          {/* 
+            <Planet />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/"
+                element={<Planet planet={planet} />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path='*'
+                element={<NotFound/>}
+              />
+            </Routes> */}
+          {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
+            <Sun />
+            <Sky />
+            <Stars />
+            {planetData.map((planet) => (
+              <Planet planet={planet} key={planet.id} />
+            ))}
+            <Lights />
+            <OrbitControls />
+          </Canvas> */}
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
 
-export default App;
+
+function Sun() {
+  return (
+    <mesh>
+      <sphereGeometry args={[2.5, 32, 32]} />
+      <meshStandardMaterial color="orangered" />
+    </mesh>
+  );
+}
+
+function Planet({ planet: { color, xRadius, zRadius, size } }) {
+  const randomNum = Math.random();
+  const planetRef = React.useRef();
+
+  useFrame(({ clock }) => {
+    const t = randomNum / 2 * clock.getElapsedTime();
+    const x = xRadius * Math.sin(t);
+    const z = zRadius * Math.cos(t);
+    planetRef.current.position.x = x;
+    planetRef.current.position.z = z;
+  });
+
+  return (
+    <>
+      <mesh ref={planetRef}>
+        <sphereGeometry args={[size, 32, 32]} />
+        <meshStandardMaterial color={color} />
+      </mesh>
+      <Ecliptic xRadius={xRadius} zRadius={zRadius} />
+    </>
+  );
+}
+
+function Lights() {
+  return (
+    <>
+      <ambientLight />
+      <pointLight position={[0, 0, 0]} />
+    </>
+  );
+}
+
+function Ecliptic({ xRadius = 1, zRadius = 1 }) {
+  const points = [];
+  for (let index = 0; index < 64; index++) {
+    const angle = (index / 64) * 2 * Math.PI;
+    const x = xRadius * Math.cos(angle);
+    const z = zRadius * Math.sin(angle);
+    points.push(new THREE.Vector3(x, 0, z));
+  }
+
+  points.push(points[0]);
+
+  const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+  return (
+    <line geometry={lineGeometry}>
+      <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
+    </line>
+  );
+}

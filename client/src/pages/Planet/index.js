@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
-import Card from 'react-bootstrap/Card';
-import PlanetSounds from './planetSounds';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 import './Planet.css';
 
-// COMPONENTS
+//* COMPONENTS---------------------------
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
+import PlanetSounds from './planetSounds';
 
-// import { useQuery } from '@apollo/client';
-// import { QUERY_PLANET } from '../../utils/queries';
 
-// // get props from app.js when user selects a planet
+import { useQuery } from '@apollo/client';
+import { QUERY_PLANET } from '../../utils/queries';
+
+// get props from app.js when user selects a planet
 // export default function Planet(planet) {
 
 //     // !
@@ -28,7 +29,7 @@ import PlanetComment from './PlanetComment';
 
 
 export default function Planet() {
-    const {planetname} = useParams();
+    const { planetname } = useParams();
 
     return (
         <div className='planetContainer'>
@@ -44,14 +45,14 @@ export default function Planet() {
                 planet={planet}/> */}
             {/* <Moon
                 planet={planet}/> */}
-            {/* add comment textbox,  */}
             <PlanetComment
-            planet={planet}/>
-        <PlanetSounds planet={planetname} />
+                planet={planet} />
+
+            <PlanetSounds planet={planetname} />
+
 
         </div>
 
     );
 };
-
 
