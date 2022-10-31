@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import Sound from 'react-sound';
+
 import Planet from '.';
 
 import Earth from '../../assets/earthSound.mp3';
