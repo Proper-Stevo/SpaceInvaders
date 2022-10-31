@@ -4,21 +4,45 @@
     --starText: 'Codystar', cursive;
 }
 
+/* -------------PLANET NAME CARD------------------ */
 .planet-name-card {
     margin:auto;
-    width: 750px;
     max-width: 80%;
-    padding: 30px;
+    padding: 20px;
+    background-color: rgba(218, 223, 225, .6);
+    margin-top: 100px;
+    width: fit-content;
+    border-radius: 5px;
 }
 
-.planet-name-card Body {
+/* .planet-name-card Body {
     padding: 30px;
-}
+} */
 
 .planet-body-type{
-    color: white;
+    font-size: 16px;
 }
 
 .planet-name {
-    color: white;
+    font-size: 40px;
+}
+
+
+/* -----------------PLANET NOTES(SAVED)------------ */
+.userCommentCard {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+
+.notes-title {
+    font-size: 30px;
+}
+
+.comment-card-text {
+    background-color: rgba(218, 223, 225, .6);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
