@@ -8,16 +8,16 @@
 //     // for each mooon return a card 
 
 //     // QUERY_PLANET
-//     // const { moons } = projectsData
+//     // const { moons } = planet.name.moons
 
 //     return (
 //         <div className="moon-container">
-//             {moons.map((moon, index) => {
+//             {planets.moons.map((moon, index) => {
 //                 return (
 //                     <Card className="bg-dark text-white my-5 project-display" key={index}>
 //                         <Card.Img className="project-img" src="moon-img" alt="Card image" />
 //                         <Card.ImgOverlay className="overlay">
-//                             <Card.Title>{planet.moon}</Card.Title>
+//                             <Card.Title>{moon}</Card.Title>
 //                         </Card.ImgOverlay>
 //                     </Card>
 //                 );

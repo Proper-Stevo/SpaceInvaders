@@ -14,7 +14,10 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: aqua;
+  /* background-color: aqua; */
+  background-image: url('./assets/images/ORION_BACKGROUND.png');
+  background-repeat: no-repeat;
+    background-size: cover;
   color: white;
 }
 
