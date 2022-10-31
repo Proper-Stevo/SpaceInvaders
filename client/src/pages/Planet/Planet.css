@@ -34,6 +34,8 @@
     padding-top: 30px;
     padding-bottom: 30px;
     width: 80%;
+    margin: auto;
+    margin-top: 20px;
     position: relative;
 }
 
@@ -41,25 +43,34 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: aquamarine;
-    clip-path: polygon(0 50.00px, 50.00px 0, 100% 0, 100% 
+    background: gray;
+    clip-path: polygon(0 50.00px, 
+            50.00px 0, 100% 0, 100% 
             calc(100% - 50.00px),
             calc(100% - 50.00px) 
-            100%, 0 100%, 0 50.00px, 4px 
-            calc(50.00px + 1.66px), 4px 
-            calc(100% - 4px),
-            calc(100% - 50.00px - 1.66px) 
-            calc(100% - 4px),
-            calc(100% - 4px) 
-            calc(100% - 50.00px - 1.66px),
-            calc(100% - 4px) 4px, 
-            calc(50.00px + 1.66px) 4px, 4px 
-            calc(50.00px + 1.66px));
+            100%, 0 100%, 0 50.00px, 8px 
+            calc(50.00px + 3.31px), 8px 
+            calc(100% - 8px),
+            calc(100% - 50.00px - 3.31px) 
+            calc(100% - 8px),
+            calc(100% - 8px) 
+            calc(100% - 50.00px - 3.31px),
+            calc(100% - 8px) 4px, 
+            calc(50.00px + 3.31px) 8px, 8px 
+            calc(50.00px + 3.31px));
+    border-style: ridge;
 }
 
 .planet-facts-row {
     margin: 0;
     width: fit-content;
+}
+
+.planet-fact-card {
+    margin: 10px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    padding: 4px;
 }
 
 /* -----------------PLANET NOTES(SAVED)------------ */
