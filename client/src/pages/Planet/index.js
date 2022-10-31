@@ -14,18 +14,18 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PLANET } from '../../utils/queries';
 
 // get props from app.js when user selects a planet
-export default function Planet(planet) {
+// export default function Planet(planet) {
 
-    // !
-    const { loading, data } = useQuery(QUERY_PLANET);
-    // userData is data pulled from users or empty object
-    const planetData = data?.planet || {};
+//     // !
+//     const { loading, data } = useQuery(QUERY_PLANET);
+//     // userData is data pulled from users or empty object
+//     const planetData = data?.planet || {};
 
-    const audio = new Audio('./assets/earthSound.mp3');
+//     const audio = new Audio('./assets/earthSound.mp3');
 
-    const start = () => {
-        audio.play();
-    }
+//     const start = () => {
+//         audio.play();
+//     }
 
 
 export default function Planet() {
@@ -47,11 +47,12 @@ export default function Planet() {
                 planet={planet}/> */}
             {/* add comment textbox,  */}
 
-            <PlanetComment
-            planet={planet}/>
+            {/* <PlanetComment
+            planet={planet}/> */}
 
             {/* <PlanetComment/> */}
-        <PlanetSounds planet={planetname} />
+        {/* <PlanetSounds planet={planetname} /> */}
+        {/* test comments */}
             <PlanetComment/>
 
         </div>
