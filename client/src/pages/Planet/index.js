@@ -20,10 +20,24 @@ import { QUERY_PLANET } from '../../utils/queries';
 // get props from app.js when user selects a planet
 // export default function Planet(planet) {
 
+
 //     // !
 //     const { loading, data } = useQuery(QUERY_PLANET);
 //     // userData is data pulled from users or empty object
 //     const planetData = data?.planet || {};
+
+//     const audio = new Audio('./assets/earthSound.mp3');
+
+//     const start = () => {
+//         audio.play();
+//     }
+
+
+//     // !
+//     const { loading, data } = useQuery(QUERY_PLANET);
+//     // userData is data pulled from users or empty object
+//     const planetData = data?.planet || {};
+
 
 export default function Planet(planet) {
 
