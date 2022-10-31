@@ -7,6 +7,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -14,6 +15,15 @@ import Planet from './pages/Planet'
 
 
 import './App.css';
+
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, Sky, Stars } from "@react-three/drei";
+import * as THREE from "three";
+// import planetData from "./planetData";
+
+import "./styles.css";
+// import NotFoundErr from './pages/NotFoundErr';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -58,36 +68,34 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
 
-     
-
 
       <Navbar />
       <div style={{ width: "100vw", height: "100vh" }}>
 
 
-          
-          
-          <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/planet/:planetname"
-              element={<Planet />}
-            />
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            {/* {/* ADD A 404 PAGE?? (PREMADE) */}
-            <Route
-              path='*'
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-              </Routes>
-        </div>
-      
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/planet/:planetname"
+            element={<Planet />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          {/* {/* ADD A 404 PAGE?? (PREMADE) */}
+          <Route
+            path='*'
+            element={<h1 className="display-2">Wrong page!</h1>}
+          />
+        </Routes>
+
+      </div>
+
     </ApolloProvider>
   );
 }
+
