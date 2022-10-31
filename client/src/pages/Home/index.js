@@ -1,9 +1,9 @@
 // solar system
-import React, { Suspense} from 'react';
+import React, { Suspense } from 'react';
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { applyProps, Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import planetData from "../../planetData";
@@ -22,27 +22,27 @@ import jupiter from '../../assets/images/jupiter.jpg'
 
 
 
-export default function Home() {
-    return (
-        <>
-            <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
-            < Suspense fallback={<> loading... </>} >
-              <Sun />
-            </Suspense>
-            <Sky />
-            <Stars />
-            {planetData.map((planet) => (
-            //    <Link to = {`/${planet.path}`} >
-              <Suspense fallback={<> loading... </>} >
-                <Planet planet={planet} key={planet.id} /> 
-                </Suspense>
-                // </Link>
-            ))}
-                <Lights />
-                <OrbitControls />
-              </Canvas>
-        </>
-    )
+export default function Home(props) {
+  return (
+    <>
+      <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
+        < Suspense fallback={<> loading... </>} >
+          <Sun />
+        </Suspense>
+        <Sky />
+        <Stars />
+        {planetData.map((planet) => (
+          //    <Link to = {`/${planet.path}`} >
+          <Suspense fallback={<> loading... </>} >
+            <Planet planet={planet} key={planet.id} nav={props.nav} />
+          </Suspense>
+          // </Link>
+        ))}
+        <Lights />
+        <OrbitControls />
+      </Canvas>
+    </>
+  )
 };
 
 
@@ -62,27 +62,28 @@ function Sun() {
   );
 }
 
-function Planet({ planet: { img, xRadius, zRadius, size, path } }) {
+function Planet({ planet: { img, xRadius, zRadius, size, path }, nav }) {
+
   const randomNum = Math.random();
   const planetRef = React.useRef();
   console.log(img)
-  if (path === "mercury"){
+  if (path === "mercury") {
     img = mercury
-  } else if (path === "venus"){
+  } else if (path === "venus") {
     img = venus
-  } else if (path === "earth"){
+  } else if (path === "earth") {
     img = earth
-  } else if (path === "mars"){
+  } else if (path === "mars") {
     img = mars
-  } else if (path === "jupiter"){
+  } else if (path === "jupiter") {
     img = jupiter
-  } else if (path === "saturn"){
+  } else if (path === "saturn") {
     img = saturn
-  } else if (path === "uranus"){
+  } else if (path === "uranus") {
     img = uranus
-  } else if (path === "neptune"){
+  } else if (path === "neptune") {
     img = neptune
-  } else if (path === "pluto"){
+  } else if (path === "pluto") {
     img = pluto
   }
   useFrame(({ clock }) => {
@@ -95,8 +96,15 @@ function Planet({ planet: { img, xRadius, zRadius, size, path } }) {
   const planetMaps = useLoader(TextureLoader, img)
   return (
     <>
-   
-      <mesh ref={planetRef}>
+
+      <mesh ref={planetRef} onClick={() => {
+        console.log(`hit ${path}`)
+        // return document.location.replace(`/planet/${path}`)
+        // console.log(nav())
+        return nav(`/planet/${path}`)
+        //add link her
+
+      }}>
         <sphereGeometry args={[size, 32, 32]} />
         <meshStandardMaterial
           map={planetMaps}
