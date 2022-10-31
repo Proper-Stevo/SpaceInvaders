@@ -80,7 +80,7 @@ export default function App() {
               />
               <Route
                 path="/"
-                element={<Planet />}
+                element={<Planet planet={planet}/>}
               />
               <Route
                 path="/login"

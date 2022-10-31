@@ -4,7 +4,7 @@
 
 
 // In our return method, we use the map method to return a new array 
-// export default function Moons() {
+// export default function Moons(planet) {
 //     // for each mooon return a card 
 
 //     // QUERY_PLANET
@@ -17,7 +17,7 @@
 //                     <Card className="bg-dark text-white my-5 project-display" key={index}>
 //                         <Card.Img className="project-img" src="moon-img" alt="Card image" />
 //                         <Card.ImgOverlay className="overlay">
-//                             <Card.Title>Moon Name</Card.Title>
+//                             <Card.Title>{planet.moon}</Card.Title>
 //                         </Card.ImgOverlay>
 //                     </Card>
 //                 );

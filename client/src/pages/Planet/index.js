@@ -22,14 +22,7 @@ import { QUERY_PLANET } from '../../utils/queries';
 //     // userData is data pulled from users or empty object
 //     const planetData = data?.planet || {};
 
-//     const audio = new Audio('./assets/earthSound.mp3');
-
-//     const start = () => {
-//         audio.play();
-//     }
-
-
-export default function Planet() {
+export default function Planet(planet) {
     const { planetname } = useParams();
 
     return (
