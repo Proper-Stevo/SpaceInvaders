@@ -49,3 +49,8 @@
 .planet-link:hover {
     color: hotpink;
 }
+
+.nav-login {
+    color: whitesmoke;
+    text-decoration: none;
+}
