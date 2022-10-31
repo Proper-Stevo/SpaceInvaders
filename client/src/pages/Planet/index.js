@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+
 import Card from 'react-bootstrap/Card';
+import PlanetSounds from './planetSounds';
+import { useParams } from 'react-router-dom';
+import moonImg from '../../assets/images/moon-img.png';
+
 import './Planet.css';
 
 //* COMPONENTS---------------------------
@@ -21,34 +25,26 @@ import { QUERY_PLANET } from '../../utils/queries';
 //     // userData is data pulled from users or empty object
 //     const planetData = data?.planet || {};
 
-//     const audio = new Audio('./assets/earthSound.mp3');
+export default function Planet(planet) {
 
-//     const start = () => {
-//         audio.play();
-//     }
-
-
-export default function Planet() {
     const { planetname } = useParams();
 
     return (
         <div className='planetContainer'>
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Subtitle className="mb-2 text-muted">{planetData.bodyType}</Card.Subtitle>
-                    <Card.Title>{planetData.name}</Card.Title>
-                </Card.Body>
-            </Card>
-            {/* insert planet image */}
             {/* pass through planet data */}
-            {/* <PlanetFacts
-                planet={planet}/> */}
+            <PlanetFacts />
+            <div className='moon-container'>
+            <Card className="bg-dark text-white my-5 moon-display">
+                <Card.Img className="moon-img" src={moonImg} alt="Card image" />
+                <Card.ImgOverlay className="overlay">
+                    <Card.Title className='moon-name'>Moon Name</Card.Title>
+                </Card.ImgOverlay>
+            </Card>
+            </div>
             {/* <Moon
                 planet={planet}/> */}
-            <PlanetComment
-                planet={planet} />
-
-            <PlanetSounds planet={planetname} />
+            {/* <PlanetSounds planet={planetname} /> */}
+            <PlanetComment />
 
 
         </div>

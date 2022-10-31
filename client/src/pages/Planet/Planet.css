@@ -1,0 +1,161 @@
+:root {
+    --titleText: 'Megrim', cursive;
+    --fontText: 'Unica One', cursive;
+    --starText: 'Codystar', cursive;
+}
+
+.planet-container {
+    background-color: rgba(218, 223, 225, 0);
+}
+
+/* -------------PLANET NAME CARD------------------ */
+.planet-name-card {
+    margin: auto;
+    max-width: 80%;
+    padding: 20px;
+    /* background-color: rgba(218, 223, 225, .6); */
+    background-color: none;
+    border: 2px solid rgba(218, 223, 225, .6);
+    margin-top: 100px;
+    width: fit-content;
+    border-radius: 5px;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* .planet-name-card Body {
+    padding: 30px;
+} */
+
+.planet-body-type {
+    font-size: 13px;
+}
+
+.planet-name {
+    font-size: 30px;
+}
+
+/* ------------------PLANET FACTS------------------- */
+.planetFactsContainer {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+.planetFactsContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: gray;
+    clip-path: polygon(0 50.00px, 
+            50.00px 0, 100% 0, 100% 
+            calc(100% - 50.00px),
+            calc(100% - 50.00px) 
+            100%, 0 100%, 0 50.00px, 8px 
+            calc(50.00px + 3.31px), 8px 
+            calc(100% - 8px),
+            calc(100% - 50.00px - 3.31px) 
+            calc(100% - 8px),
+            calc(100% - 8px) 
+            calc(100% - 50.00px - 3.31px),
+            calc(100% - 8px) 4px, 
+            calc(50.00px + 3.31px) 8px, 8px 
+            calc(50.00px + 3.31px));
+    border-style: groove;
+}
+
+.planet-facts-row {
+    margin: 0;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.planet-fact-card {
+    margin: 10px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.planet-data {
+    font-size: 25px;
+}
+
+.fact-card-item {
+    margin: 3px;
+}
+
+/* --------------------MOONS----------------------- */
+.moon-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.moon-display{
+    margin: auto;
+    
+    width: fit-content;
+    justify-content: center;
+}
+
+.moon-img {
+    width: 100px;
+}
+
+.moon-name {
+    margin: auto;
+    width: fit-content;
+}
+
+/* -----------------PLANET NOTES(SAVED)------------ */
+.loading {
+    margin: auto;
+    justify-content: center;
+}
+
+.userCommentCard {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.notes-title {
+    font-size: 30px;
+}
+
+.comment-card-text {
+    background-color: rgba(218, 223, 225, .6);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.userInputComment {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.note-text-area {
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(218, 223, 225, .6);
+}
+
+.note-btn {
+    padding: 3px;
+    float: right;
+    font-family: var(--fontText);
+    font-size: 20px;
+}
