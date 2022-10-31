@@ -47,7 +47,6 @@ export default function Planet() {
                 planet={planet}/> */}
             <PlanetComment
                 planet={planet} />
-
             <PlanetSounds planet={planetname} />
 
 

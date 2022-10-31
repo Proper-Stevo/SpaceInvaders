@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab} from 'react-bootstrap';
 import './Navbar.css'
 import SignUpForm from '../pages/Signup';
 import LoginForm from '../pages/Login';
@@ -26,15 +26,18 @@ export default function Navigation() {
             <Nav className='ml-auto'>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
-                <>
+                <div>
                   <Nav.Link as={Link} to='/planet/:planetname' >
                     Planet
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                </>
+                  <Nav.Link onClick={Auth.logout}>
+                    Logout
+                  </Nav.Link>                   
+                </div>
               ) : (
                 <Nav.Link className='login-home-link' onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
+
             </Nav>
           </Navbar.Collapse>
         </Container>

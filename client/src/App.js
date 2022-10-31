@@ -17,7 +17,7 @@ import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import planetData from "./planetData";
 import "./styles.css";
-import NotFoundErr from './pages/NotFoundErr';
+// import NotFoundErr from './pages/NotFoundErr';
 
 
 // Construct our main GraphQL API endpoint
@@ -69,7 +69,6 @@ export default function App() {
 
         <div style={{ width: "100vw", height: "100vh" }}>
 <Navbar />
-    <NotFoundErr/>
           {/* 
             <Planet />
             <Routes>
