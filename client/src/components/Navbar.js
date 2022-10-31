@@ -32,6 +32,27 @@ export default function Navigation() {
                   <Nav.Link as={Link} to='/planet/:planetname' >
                     Planet
                   </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/earth' >
+                    Earth
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/mercury' >
+                    Mercury
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/jupiter' >
+                    Jupiter
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/mars' >
+                    Mars
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/neptune' >
+                    Neptune
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/saturn' >
+                    Saturn
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/planet/venus' >
+                    Venus
+                  </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>
                     Logout
                   </Nav.Link>                   
