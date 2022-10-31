@@ -1,175 +1,172 @@
-// import React, { Suspense } from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   createHttpLink,
-// } from '@apollo/client';
-// import { setContext } from '@apollo/client/link/context';
-// import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-// import { OrbitControls, Sky, Stars } from "@react-three/drei";
-// import * as THREE from "three";
-// // import planetData from "./planetData";
-// import Navbar from './components/Navbar';
-// import Home from './pages/Home';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { OrbitControls, Sky, Stars } from "@react-three/drei";
+import * as THREE from "three";
+// import planetData from "./planetData";
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
-// import "./styles.css";
-// // import NotFoundErr from './pages/NotFoundErr';
+import "./styles.css";
+// import NotFoundErr from './pages/NotFoundErr';
 
-// import './App.css';
-// import Planet from './pages/Planet';
+import './App.css';
+import Planet from './pages/Planet';
 
-// // Construct our main GraphQL API endpoint
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
-// // Construct request middleware that will attach the JWT token to every request as an `authorization` header
-// const authLink = setContext((_, { headers }) => {
-//   // get the authentication token from local storage if it exists
-//   const token = localStorage.getItem('id_token');
-//   // return the headers to the context so httpLink can read them
-//   return {
-//     headers: {
-//       ...headers,
-//       authorization: token ? `Bearer ${token}` : '',
-//     },
-//   };
-// });
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
-// const client = new ApolloClient({
-//   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache(),
-// });
-
-
-// // TODO: const planet = user selects a planet, get name, pass all planet data by name
-// // ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
-// // keep outside
-// // GET DATA ---
-// // import { useQuery } from '@apollo/client';
-// // import { QUERY_PLANET } from '../../utils/queries';
-
-// //  PASS DATA -- add below in function App():
-// // const planet = data?.planet || {};
-// //  <Planet planet={planet}/>
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 
+// TODO: const planet = user selects a planet, get name, pass all planet data by name
+// ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
+// keep outside
+// GET DATA ---
+// import { useQuery } from '@apollo/client';
+// import { QUERY_PLANET } from '../../utils/queries';
 
-// export default function App() {
+//  PASS DATA -- add below in function App():
+// const planet = data?.planet || {};
+//  <Planet planet={planet}/>
+
+
+
+export default function App() {
+
+  return (
+    <ApolloProvider client={client}>
+
+      <Router>
+
+        <div style={{ width: "100vw", height: "100vh" }}>
+<Navbar />
+        {/* <div style={{ width: "100vw", height: "100vh" }}> */}
+        <Planet />
+          {/* 
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route
+                path="/"
+
+                element={<Planet planet={planet}/>}
+
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path='*'
+                element={<NotFound/>}
+              />
+            </Routes> */}
+          {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
+
+            <Sun />
+            <Sky />
+            <Stars />
+            {planetData.map((planet) => (
+              <Planet planet={planet} key={planet.id} />
+            ))}
+            <Lights />
+            <OrbitControls />
+          </Canvas> */}
+
+        </div>
+
+      </Router>
+    </ApolloProvider>
+  );
+}
+
+
+{/* // function Sun() { */}
+{/* //   return (
+//     <mesh>
+//       <sphereGeometry args={[2.5, 32, 32]} />
+//       <meshStandardMaterial color="orangered" />
+//     </mesh>
+//   );
+// } */}
+
+ {/* function Planet({ planet: { color, xRadius, zRadius, size } }) { */}
+{/* //   const randomNum = Math.random();
+//   const planetRef = React.useRef();
+
+//   useFrame(({ clock }) => { */}
+{/* //     const t = randomNum/2 * clock.getElapsedTime();
+//     const x = xRadius * Math.sin(t);
+//     const z = zRadius * Math.cos(t);
+//     planetRef.current.position.x = x;
+//     planetRef.current.position.z = z;
+//   });
 
 //   return (
-//     <ApolloProvider client={client}>
-
-//       <Router>
-
-//         <div style={{ width: "100vw", height: "100vh" }}>
-// <Navbar />
-//         {/* <div style={{ width: "100vw", height: "100vh" }}> */}
-//         <Navbar />
-//         <Planet />
-//           {/* 
-          
-
-//             <Routes>
-//               <Route
-//                 path="/"
-//                 element={<Home />}
-//               />
-//               <Route
-//                 path="/"
-
-//                 element={<Planet planet={planet}/>}
-
-//               />
-//               <Route
-//                 path="/login"
-//                 element={<Login />}
-//               />
-//               <Route
-//                 path='*'
-//                 element={<NotFound/>}
-//               />
-//             </Routes> */}
-//           {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
-
-//             <Sun />
-//             <Sky />
-//             <Stars />
-//             {planetData.map((planet) => (
-//               <Planet planet={planet} key={planet.id} />
-//             ))}
-//             <Lights />
-//             <OrbitControls />
-//           </Canvas> */}
-
-//         {/* </div> */}
-
-//       </Router>
-//     </ApolloProvider>
+//     <>
+//       <mesh ref={planetRef}>
+//         <sphereGeometry args={[size, 32, 32]} />
+//         <meshStandardMaterial color={color} />
+//       </mesh>
+//       <Ecliptic xRadius={xRadius} zRadius={zRadius} />
+//     </>
 //   );
 // }
 
+// function Lights() { */}
+{/* //   return (
+//     <>
+//       <ambientLight />
+//       <pointLight position={[0, 0, 0]} />
+//     </>
+//   );
+// } */}
 
-// {/* // function Sun() { */}
-// {/* //   return (
-// //     <mesh>
-// //       <sphereGeometry args={[2.5, 32, 32]} />
-// //       <meshStandardMaterial color="orangered" />
-// //     </mesh>
-// //   );
-// // } */}
+{/* // function Ecliptic({ xRadius = 1, zRadius = 1 }) { */}
+{/* //   const points = []; */}
+{/* //   for (let index = 0; index < 64; index++) { */}
+{/* //     const angle = (index / 64) * 2 * Math.PI;
+//     const x = xRadius * Math.cos(angle);
+//     const z = zRadius * Math.sin(angle);
+//     points.push(new THREE.Vector3(x, 0, z));
+//   }
 
-//  {/* function Planet({ planet: { color, xRadius, zRadius, size } }) { */}
-// {/* //   const randomNum = Math.random();
-// //   const planetRef = React.useRef();
+//   points.push(points[0]);
 
-// //   useFrame(({ clock }) => { */}
-// {/* //     const t = randomNum/2 * clock.getElapsedTime();
-// //     const x = xRadius * Math.sin(t);
-// //     const z = zRadius * Math.cos(t);
-// //     planetRef.current.position.x = x;
-// //     planetRef.current.position.z = z;
-// //   });
-
-// //   return (
-// //     <>
-// //       <mesh ref={planetRef}>
-// //         <sphereGeometry args={[size, 32, 32]} />
-// //         <meshStandardMaterial color={color} />
-// //       </mesh>
-// //       <Ecliptic xRadius={xRadius} zRadius={zRadius} />
-// //     </>
-// //   );
-// // }
-
-// // function Lights() { */}
-// {/* //   return (
-// //     <>
-// //       <ambientLight />
-// //       <pointLight position={[0, 0, 0]} />
-// //     </>
-// //   );
-// // } */}
-
-// {/* // function Ecliptic({ xRadius = 1, zRadius = 1 }) { */}
-// //   const points = [];
-// //   for (let index = 0; index < 64; index++) {
-// //     const angle = (index / 64) * 2 * Math.PI;
-// //     const x = xRadius * Math.cos(angle);
-// //     const z = zRadius * Math.sin(angle);
-// //     points.push(new THREE.Vector3(x, 0, z));
-// //   }
-
-// //   points.push(points[0]);
-
-// //   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
-// //   return (
-// //     <line geometry={lineGeometry}>
-// //       <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
-// //     </line>
-// //   );
-// // }
+//   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+//   return (
+//     <line geometry={lineGeometry}>
+//       <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
+//     </line>
+//   );
+// } */}
 

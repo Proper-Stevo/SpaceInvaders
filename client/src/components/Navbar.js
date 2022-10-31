@@ -17,52 +17,51 @@ export default function Navigation() {
   return (
     <>
 
-
       <Navbar className='nav-container'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/' className='nav-title'>
             Orbital Odyssey
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
+          {/* <Navbar.Toggle aria-controls='navbar' /> */}
+          {/* <Navbar.Collapse id='navbar'> */}
             <Nav className='ml-auto'>
               {/* if user is logged in show saved books and logout */}
-              {Auth.loggedIn() ? (
+              {/* {Auth.loggedIn() ? ( */}
                 <div>
-                  <Nav.Link as={Link} to='/planet/:planetname' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet' >
                     Planet
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/earth' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/earth' >
                     Earth
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/mercury' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/mercury' >
                     Mercury
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/jupiter' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/jupiter' >
                     Jupiter
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/mars' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/mars' >
                     Mars
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/neptune' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/neptune' >
                     Neptune
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/saturn' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/saturn' >
                     Saturn
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/planet/venus' >
+                  <Nav.Link className="planet-link" as={Link} to='/planet/venus' >
                     Venus
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>
                     Logout
                   </Nav.Link>                   
                 </div>
-              ) : (
+              {/* ) : (
                 <Nav.Link className='login-home-link' onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )}
+              )} */}
 
             </Nav>
-          </Navbar.Collapse>
+          {/* </Navbar.Collapse> */}
         </Container>
       </Navbar>
       {/* set modal data up */}

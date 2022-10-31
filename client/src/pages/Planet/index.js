@@ -11,7 +11,7 @@ import './Planet.css';
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
-import PlanetSounds from './planetSounds';
+import planetSounds from './planetSounds';
 
 
 import { useQuery } from '@apollo/client';
