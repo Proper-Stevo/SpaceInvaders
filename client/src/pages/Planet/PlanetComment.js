@@ -60,26 +60,24 @@ export default function PlanetComment(planet) {
     // * RENDER----------------------------------------------
 
     if (loading) {
-        return <h2>LOADING...</h2>;
+        return <h2 className='loading'>LOADING...</h2>;
     }
 
     // ! if user has a comment for planet, then render comment,
     // ! otherwise render empty text box with save/add note button - if statment line 22
 
     // ! FIX IF STATEMENT - check if usercomment exists
-    return !userComment ? (
+    return userComment ? (
         <div className='userInputComment'>
             <h2 className='notes-title'>SATURN NOTES</h2>
             <InputGroup className="mb-3">
-                <InputGroup.Text id="inputGroup-sizing-default">
-                    Notes
-                </InputGroup.Text>
                 <Form.Control
                     aria-label="Default"
                     aria-describedby="inputGroup-sizing-default"
+                    className='note-text-area'
                 />
             </InputGroup>
-            <Button variant="outline-primary">Save Notes</Button>{' '}
+            <Button className='note-btn'>SAVE NOTE</Button>{' '}
         </div>
     ) : (
         <div className='userCommentCard'>
@@ -87,7 +85,7 @@ export default function PlanetComment(planet) {
             <Card className='comment-card-text'>
                 <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Card.Body>
             </Card>
-            <Button className='delete-note-btn'>Delete Notes</Button>{' '}
+            <Button className='note-btn'>DELETE NOTE</Button>{' '}
         </div>
     );
 

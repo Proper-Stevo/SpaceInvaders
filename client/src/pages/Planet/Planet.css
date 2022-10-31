@@ -4,15 +4,24 @@
     --starText: 'Codystar', cursive;
 }
 
+.planet-container {
+    background-color: rgba(218, 223, 225, 0);
+}
+
 /* -------------PLANET NAME CARD------------------ */
 .planet-name-card {
     margin: auto;
     max-width: 80%;
     padding: 20px;
-    background-color: rgba(218, 223, 225, .6);
+    /* background-color: rgba(218, 223, 225, .6); */
+    background-color: none;
+    border: 2px solid rgba(218, 223, 225, .6);
     margin-top: 100px;
     width: fit-content;
     border-radius: 5px;
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 /* .planet-name-card Body {
@@ -33,7 +42,7 @@
     padding-right: 60px;
     padding-top: 30px;
     padding-bottom: 30px;
-    width: 80%;
+    width: fit-content;
     margin: auto;
     margin-top: 20px;
     position: relative;
@@ -58,12 +67,15 @@
             calc(100% - 8px) 4px, 
             calc(50.00px + 3.31px) 8px, 8px 
             calc(50.00px + 3.31px));
-    border-style: ridge;
+    border-style: groove;
 }
 
 .planet-facts-row {
     margin: 0;
     width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .planet-fact-card {
@@ -73,12 +85,46 @@
     padding: 4px;
 }
 
+.planet-data {
+    font-size: 25px;
+}
+
+.fact-card-item {
+    margin: 3px;
+}
+
+/* --------------------MOONS----------------------- */
+.moon-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.moon-display{
+    margin: auto;
+    
+    width: fit-content;
+    justify-content: center;
+}
+
+.moon-img {
+    width: 100px;
+}
+
+.moon-name {
+    margin: auto;
+    width: fit-content;
+}
+
 /* -----------------PLANET NOTES(SAVED)------------ */
+.loading {
+    margin: auto;
+    justify-content: center;
+}
+
 .userCommentCard {
     max-width: 80%;
     margin: auto;
     margin-top: 50px;
-
 }
 
 .notes-title {
@@ -92,7 +138,24 @@
     border-radius: 5px;
 }
 
-.delete-note-btn {
+.userInputComment {
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.note-text-area {
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: rgba(218, 223, 225, .6);
+}
+
+.note-btn {
     padding: 3px;
     float: right;
+    font-family: var(--fontText);
+    font-size: 20px;
 }

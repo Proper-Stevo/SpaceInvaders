@@ -93,6 +93,7 @@ export default function App() {
               />
             </Routes> */}
           {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
+            
             <Sun />
             <Sky />
             <Stars />
