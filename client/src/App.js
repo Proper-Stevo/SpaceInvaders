@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -64,7 +64,7 @@ const client = new ApolloClient({
 
 
 export default function App() {
-
+  const navigate = useNavigate();
   return (
     <ApolloProvider client={client}>
 
@@ -76,7 +76,7 @@ export default function App() {
         <Routes>
           <Route
             path="/"
-            element={<Home />}
+            element={<Home nav={navigate} />}
           />
           <Route
             path="/planet/:planetname"
