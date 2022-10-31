@@ -1,3 +1,4 @@
+
 import React, { Component, useState } from 'react';
 
 import Planet from '.';
@@ -11,6 +12,19 @@ import Saturn from '../../assets/saturnSound.mp3';
 import Uranus from '../../assets/uranusSound.mp3';
 import Venus from '../../assets/venusSound.mp3';
 import '../../pages/Planet/Planet.css'
+
+import React, {useState} from 'react';
+// import Sound from 'react-sound';
+
+import Earth from '../../assets/sounds/earthSound.mp3';
+import Jupiter from '../../assets/sounds/jupiterSound.mp3';
+import Mars from '../../assets/sounds/marsSound.mp3';
+import Mercury from '../../assets/sounds/mercurySound.mp3';
+import Neptune from '../../assets/sounds/neptuneSound.mp3';
+import Saturn from '../../assets/sounds/saturnSound.mp3';
+import Uranus from '../../assets/sounds/uranusSound.mp3';
+import Venus from '../../assets/sounds/venusSound.mp3';
+
 
 
 const PlanetSounds = ({planet}) => {
