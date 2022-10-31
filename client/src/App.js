@@ -15,13 +15,10 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
 import "./styles.css";
+// import NotFoundErr from './pages/NotFoundErr';
 
 import './App.css';
 import Planet from './pages/Planet';
-
-
-
-
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -68,15 +65,11 @@ export default function App() {
 
       <Router>
 
-
-          
-          
+        <div style={{ width: "100vw", height: "100vh" }}>
+<Navbar />
         {/* <div style={{ width: "100vw", height: "100vh" }}> */}
-        <Navbar />
         <Planet />
           {/* 
-          
-
             <Routes>
               <Route
                 path="/"
@@ -109,7 +102,7 @@ export default function App() {
             <OrbitControls />
           </Canvas> */}
 
-        {/* </div> */}
+        </div>
 
       </Router>
     </ApolloProvider>
@@ -117,21 +110,21 @@ export default function App() {
 }
 
 
-// function Sun() {
-//   return (
+{/* // function Sun() { */}
+{/* //   return (
 //     <mesh>
 //       <sphereGeometry args={[2.5, 32, 32]} />
 //       <meshStandardMaterial color="orangered" />
 //     </mesh>
 //   );
-// }
+// } */}
 
-// function Planet({ planet: { color, xRadius, zRadius, size } }) {
-//   const randomNum = Math.random();
+ {/* function Planet({ planet: { color, xRadius, zRadius, size } }) { */}
+{/* //   const randomNum = Math.random();
 //   const planetRef = React.useRef();
 
-//   useFrame(({ clock }) => {
-//     const t = randomNum/2 * clock.getElapsedTime();
+//   useFrame(({ clock }) => { */}
+{/* //     const t = randomNum/2 * clock.getElapsedTime();
 //     const x = xRadius * Math.sin(t);
 //     const z = zRadius * Math.cos(t);
 //     planetRef.current.position.x = x;
@@ -149,19 +142,19 @@ export default function App() {
 //   );
 // }
 
-// function Lights() {
-//   return (
+// function Lights() { */}
+{/* //   return (
 //     <>
 //       <ambientLight />
 //       <pointLight position={[0, 0, 0]} />
 //     </>
 //   );
-// }
+// } */}
 
-// function Ecliptic({ xRadius = 1, zRadius = 1 }) {
-//   const points = [];
-//   for (let index = 0; index < 64; index++) {
-//     const angle = (index / 64) * 2 * Math.PI;
+{/* // function Ecliptic({ xRadius = 1, zRadius = 1 }) { */}
+{/* //   const points = []; */}
+{/* //   for (let index = 0; index < 64; index++) { */}
+{/* //     const angle = (index / 64) * 2 * Math.PI;
 //     const x = xRadius * Math.cos(angle);
 //     const z = zRadius * Math.sin(angle);
 //     points.push(new THREE.Vector3(x, 0, z));
@@ -175,5 +168,5 @@ export default function App() {
 //       <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
 //     </line>
 //   );
-// }
+// } */}
 

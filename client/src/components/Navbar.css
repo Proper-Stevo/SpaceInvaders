@@ -38,3 +38,14 @@
     text-decoration: none;
     color: white;
 }
+
+.planet-link {
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 0px 20px 0px 20px;
+    text-decoration: none;
+}
+
+.planet-link:hover {
+    color: hotpink;
+}
