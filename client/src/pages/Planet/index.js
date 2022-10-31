@@ -41,8 +41,7 @@ export default function Planet() {
             </Card>
             {/* insert planet image */}
             {/* pass through planet data */}
-            {/* <PlanetFacts
-                planet={planet}/> */}
+            <PlanetFacts/>
             {/* <Moon
                 planet={planet}/> */}
             {/* add comment textbox,  */}

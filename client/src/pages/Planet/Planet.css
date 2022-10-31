@@ -6,7 +6,7 @@
 
 /* -------------PLANET NAME CARD------------------ */
 .planet-name-card {
-    margin:auto;
+    margin: auto;
     max-width: 80%;
     padding: 20px;
     background-color: rgba(218, 223, 225, .6);
@@ -19,21 +19,55 @@
     padding: 30px;
 } */
 
-.planet-body-type{
-    font-size: 16px;
+.planet-body-type {
+    font-size: 13px;
 }
 
 .planet-name {
-    font-size: 40px;
+    font-size: 30px;
 }
 
+/* ------------------PLANET FACTS------------------- */
+.planetFactsContainer {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 80%;
+    position: relative;
+}
+
+.planetFactsContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: aquamarine;
+    clip-path: polygon(0 50.00px, 50.00px 0, 100% 0, 100% 
+            calc(100% - 50.00px),
+            calc(100% - 50.00px) 
+            100%, 0 100%, 0 50.00px, 4px 
+            calc(50.00px + 1.66px), 4px 
+            calc(100% - 4px),
+            calc(100% - 50.00px - 1.66px) 
+            calc(100% - 4px),
+            calc(100% - 4px) 
+            calc(100% - 50.00px - 1.66px),
+            calc(100% - 4px) 4px, 
+            calc(50.00px + 1.66px) 4px, 4px 
+            calc(50.00px + 1.66px));
+}
+
+.planet-facts-row {
+    margin: 0;
+    width: fit-content;
+}
 
 /* -----------------PLANET NOTES(SAVED)------------ */
 .userCommentCard {
     max-width: 80%;
     margin: auto;
     margin-top: 50px;
-    
+
 }
 
 .notes-title {
@@ -45,4 +79,9 @@
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 5px;
+}
+
+.delete-note-btn {
+    padding: 3px;
+    float: right;
 }
