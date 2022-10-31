@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
+
 import Card from 'react-bootstrap/Card';
 import PlanetSounds from './planetSounds';
 import { useParams } from 'react-router-dom';
 import moonImg from '../../assets/images/moon-img.png';
+
 import './Planet.css';
 
-// COMPONENTS
+//* COMPONENTS---------------------------
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
+import PlanetSounds from './planetSounds';
 
 
 import { useQuery } from '@apollo/client';
@@ -23,6 +26,7 @@ import { QUERY_PLANET } from '../../utils/queries';
 //     const planetData = data?.planet || {};
 
 export default function Planet(planet) {
+
     const { planetname } = useParams();
 
     return (
@@ -39,16 +43,12 @@ export default function Planet(planet) {
             </div>
             {/* <Moon
                 planet={planet}/> */}
-            {/* <PlanetComment
-            planet={planet}/> */}
             {/* <PlanetSounds planet={planetname} /> */}
             <PlanetComment />
 
+
         </div>
 
-    )
+    );
 };
-
-
-
 

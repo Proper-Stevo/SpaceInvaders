@@ -4,13 +4,17 @@
     --starText: 'Codystar', cursive;
 }
 
+
 .navbar {
     height: 100px;
     background-color: rgba(232, 232, 232, .5);
 }
 
 .nav-container {
-    justify-content: space-around;
+    height: 100px;
+    background-color: (108, 122, 137, .7);
+    font-family: var(--fontText);
+
 }
 
 .nav-title {
@@ -20,6 +24,7 @@
     text-decoration: none;
     color: whitesmoke;
     vertical-align: middle;
+    max-width: fit-content;
 }
 
 .login-home-link {
@@ -28,6 +33,8 @@
     text-decoration: none;
 }
 
-/* .logged-in-links {
 
-} */
+.logged-in-links {
+    text-decoration: none;
+    color: white;
+}

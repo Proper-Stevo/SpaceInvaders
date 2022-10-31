@@ -15,8 +15,10 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
 import "./styles.css";
+
 import './App.css';
 import Planet from './pages/Planet';
+
 
 
 
@@ -66,6 +68,7 @@ export default function App() {
 
       <Router>
 
+
           
           
         {/* <div style={{ width: "100vw", height: "100vh" }}> */}
@@ -73,6 +76,7 @@ export default function App() {
         <Planet />
           {/* 
           
+
             <Routes>
               <Route
                 path="/"
@@ -80,20 +84,21 @@ export default function App() {
               />
               <Route
                 path="/"
+
                 element={<Planet planet={planet}/>}
+
               />
               <Route
                 path="/login"
                 element={<Login />}
               />
-                {/* ADD A 404 PAGE?? (PREMADE) */}
-              {/* <Route
+              <Route
                 path='*'
-                element={<h1 className="display-2">Wrong page!</h1>}
+                element={<NotFound/>}
               />
             </Routes> */}
           {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
-            
+
             <Sun />
             <Sky />
             <Stars />
@@ -103,7 +108,9 @@ export default function App() {
             <Lights />
             <OrbitControls />
           </Canvas> */}
+
         {/* </div> */}
+
       </Router>
     </ApolloProvider>
   );
@@ -169,3 +176,4 @@ export default function App() {
 //     </line>
 //   );
 // }
+
