@@ -77,6 +77,7 @@ const Signup = () => {
                 <Form.Group>
                     <Form.Label htmlFor="username">Username</Form.Label>
                     <Form.Control
+                        className='login-form'
                         type="text"
                         placeholder="Your username"
                         name="username"
@@ -92,6 +93,7 @@ const Signup = () => {
                 <Form.Group>
                     <Form.Label htmlFor="email">Email</Form.Label>
                     <Form.Control
+                        className='login-form'
                         type="email"
                         placeholder="Your email address"
                         name="email"
@@ -107,6 +109,7 @@ const Signup = () => {
                 <Form.Group>
                     <Form.Label htmlFor="password">Password</Form.Label>
                     <Form.Control
+                        className='login-form'
                         type="password"
                         placeholder="Your password"
                         name="password"
@@ -119,6 +122,7 @@ const Signup = () => {
                     </Form.Control.Feedback>
                 </Form.Group>
                 <Button
+                    className='button'
                     disabled={
                         !(
                             userFormData.username &&
