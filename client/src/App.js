@@ -14,7 +14,6 @@ import Planet from './pages/Planet'
 
 
 import './App.css';
-// import Planet from './pages/Planet';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -59,7 +58,7 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
 
-      <Router>
+     
 
 
       <Navbar />
@@ -88,7 +87,7 @@ export default function App() {
             />
               </Routes>
         </div>
-      </Router>
+      
     </ApolloProvider>
   );
 }
