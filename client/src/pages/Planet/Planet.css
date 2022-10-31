@@ -1,0 +1,24 @@
+:root {
+    --titleText: 'Megrim', cursive;
+    --fontText: 'Unica One', cursive;
+    --starText: 'Codystar', cursive;
+}
+
+.planet-name-card {
+    margin:auto;
+    width: 750px;
+    max-width: 80%;
+    padding: 30px;
+}
+
+.planet-name-card Body {
+    padding: 30px;
+}
+
+.planet-body-type{
+    color: white;
+}
+
+.planet-name {
+    color: white;
+}

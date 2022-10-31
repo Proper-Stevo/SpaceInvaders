@@ -33,10 +33,10 @@ export default function Planet() {
 
     return (
         <div className='planetContainer'>
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Subtitle className="mb-2 text-muted">{planetData.bodyType}</Card.Subtitle>
-                    <Card.Title>{planetData.name}</Card.Title>
+            <Card className='planet-name-card'>
+                <Card.Body className='planet-name-body'>
+                    <Card.Subtitle className="mb-2 text-muted planet-body-type">PLANET</Card.Subtitle>
+                    <Card.Title className='planet-name'>SATURN</Card.Title>
                 </Card.Body>
             </Card>
             {/* insert planet image */}

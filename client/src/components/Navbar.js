@@ -17,10 +17,10 @@ export default function Navigation () {
 
   return (
     <>
-    <Navbar className='nav-container'>
-      <Container fluid>
+    <Navbar className='navbar'>
+      <Container className='nav-container' fluid>
         <Navbar.Brand as={Link} to='/' className='nav-title'>
-          Orbital Odyssey
+          ORBITAL ODYSSEY
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar' />
         <Navbar.Collapse id='navbar' bsPrefix='navbar-collapse'>

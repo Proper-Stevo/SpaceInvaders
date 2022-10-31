@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Sound from 'react-sound';
+// import Sound from 'react-sound';
 
 import Earth from '../../assets/earthSound.mp3';
 import Jupiter from '../../assets/jupiterSound.mp3';

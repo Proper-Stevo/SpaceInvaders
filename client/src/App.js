@@ -7,16 +7,18 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-
-import './App.css';
-// import Planet from './pages/Planet';
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import * as THREE from "three";
-import planetData from "./planetData";
+// import planetData from "./planetData";
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+
 import "./styles.css";
+import './App.css';
+import Planet from './pages/Planet';
+
+
 
 
 // Construct our main GraphQL API endpoint
@@ -66,11 +68,11 @@ export default function App() {
 
           
           
-        <div style={{ width: "100vw", height: "100vh" }}>
+        {/* <div style={{ width: "100vw", height: "100vh" }}> */}
         <Navbar />
-
+        <Planet />
           {/* 
-            <Planet />
+          
             <Routes>
               <Route
                 path="/"
@@ -90,7 +92,7 @@ export default function App() {
                 element={<h1 className="display-2">Wrong page!</h1>}
               />
             </Routes> */}
-          <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
+          {/* <Canvas flat linear camera={{ position: [0, 40, 25], fov: 100 }}>
             <Sun />
             <Sky />
             <Stars />
@@ -99,70 +101,70 @@ export default function App() {
             ))}
             <Lights />
             <OrbitControls />
-          </Canvas>
-        </div>
+          </Canvas> */}
+        {/* </div> */}
       </Router>
     </ApolloProvider>
   );
 }
 
 
-function Sun() {
-  return (
-    <mesh>
-      <sphereGeometry args={[2.5, 32, 32]} />
-      <meshStandardMaterial color="orangered" />
-    </mesh>
-  );
-}
+// function Sun() {
+//   return (
+//     <mesh>
+//       <sphereGeometry args={[2.5, 32, 32]} />
+//       <meshStandardMaterial color="orangered" />
+//     </mesh>
+//   );
+// }
 
-function Planet({ planet: { color, xRadius, zRadius, size } }) {
-  const randomNum = Math.random();
-  const planetRef = React.useRef();
+// function Planet({ planet: { color, xRadius, zRadius, size } }) {
+//   const randomNum = Math.random();
+//   const planetRef = React.useRef();
 
-  useFrame(({ clock }) => {
-    const t = randomNum/2 * clock.getElapsedTime();
-    const x = xRadius * Math.sin(t);
-    const z = zRadius * Math.cos(t);
-    planetRef.current.position.x = x;
-    planetRef.current.position.z = z;
-  });
+//   useFrame(({ clock }) => {
+//     const t = randomNum/2 * clock.getElapsedTime();
+//     const x = xRadius * Math.sin(t);
+//     const z = zRadius * Math.cos(t);
+//     planetRef.current.position.x = x;
+//     planetRef.current.position.z = z;
+//   });
 
-  return (
-    <>
-      <mesh ref={planetRef}>
-        <sphereGeometry args={[size, 32, 32]} />
-        <meshStandardMaterial color={color} />
-      </mesh>
-      <Ecliptic xRadius={xRadius} zRadius={zRadius} />
-    </>
-  );
-}
+//   return (
+//     <>
+//       <mesh ref={planetRef}>
+//         <sphereGeometry args={[size, 32, 32]} />
+//         <meshStandardMaterial color={color} />
+//       </mesh>
+//       <Ecliptic xRadius={xRadius} zRadius={zRadius} />
+//     </>
+//   );
+// }
 
-function Lights() {
-  return (
-    <>
-      <ambientLight />
-      <pointLight position={[0, 0, 0]} />
-    </>
-  );
-}
+// function Lights() {
+//   return (
+//     <>
+//       <ambientLight />
+//       <pointLight position={[0, 0, 0]} />
+//     </>
+//   );
+// }
 
-function Ecliptic({ xRadius = 1, zRadius = 1 }) {
-  const points = [];
-  for (let index = 0; index < 64; index++) {
-    const angle = (index / 64) * 2 * Math.PI;
-    const x = xRadius * Math.cos(angle);
-    const z = zRadius * Math.sin(angle);
-    points.push(new THREE.Vector3(x, 0, z));
-  }
+// function Ecliptic({ xRadius = 1, zRadius = 1 }) {
+//   const points = [];
+//   for (let index = 0; index < 64; index++) {
+//     const angle = (index / 64) * 2 * Math.PI;
+//     const x = xRadius * Math.cos(angle);
+//     const z = zRadius * Math.sin(angle);
+//     points.push(new THREE.Vector3(x, 0, z));
+//   }
 
-  points.push(points[0]);
+//   points.push(points[0]);
 
-  const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
-  return (
-    <line geometry={lineGeometry}>
-      <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
-    </line>
-  );
-}
+//   const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+//   return (
+//     <line geometry={lineGeometry}>
+//       <lineBasicMaterial attach="material" color="#BFBBDA" linewidth={10} />
+//     </line>
+//   );
+// }
