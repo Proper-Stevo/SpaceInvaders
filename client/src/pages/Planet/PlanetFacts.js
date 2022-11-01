@@ -34,7 +34,7 @@ export default function PlanetFacts() {
     return (
         <div>
             <Row>
-            <Card className='planet-name-card' style={{paddingBottom:"0%", margin: "50px 50px 50px 100px", backgroundColor:"rgba(218, 223, 225, .6)", height:"80px"}}>
+            <Card className='planet-name-card' style={{paddingBottom:"0%", margin: "50px 75px 50px 100px", backgroundColor:"rgba(218, 223, 225, .6)", height:"80px"}}>
                 <Card.Body className='planet-name-body' style={{padding:"7px 10px 7px 10px"}}>
                     <Card.Subtitle className="mb-2 planet-body-type" style={{color:"#e8ecf1"}}>{getPlanet.bodyType}</Card.Subtitle>
                     <Card.Title className='planet-name' style={{fontSize: "30px", fontWeight:"500", padding:"0px"}}>{upper}</Card.Title>
