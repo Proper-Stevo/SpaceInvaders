@@ -7,10 +7,13 @@ import Form from 'react-bootstrap/Form';
 
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_COMMENT, REMOVE_COMMENT } from '../../utils/mutations';
-import { QUERY_USERS } from '../../utils/queries';
+import { QUERY_USERS, QUERY_PLANET } from '../../utils/queries';
+import { useParams } from 'react-router-dom';
 
 
-export default function PlanetComment(planet) {
+export default function PlanetComment() {
+
+    const { planetname } = useParams()
 
     // define userComment through query
     // mutations to update comment
@@ -69,7 +72,7 @@ export default function PlanetComment(planet) {
     // ! FIX IF STATEMENT - check if usercomment exists
     return !userComment ? (
         <div className='userInputComment'>
-            <h2 className='notes-title'>SATURN NOTES</h2>
+            <h2 className='notes-title'>{planetname} NOTES</h2>
             <InputGroup className="mb-3">
                 <Form.Control
                     aria-label="Default"
@@ -81,7 +84,7 @@ export default function PlanetComment(planet) {
         </div>
     ) : (
         <div className='userCommentCard'>
-            <h2 className='notes-title'>{planet.name} NOTES</h2>
+            <h2 className='notes-title'>{planetname} NOTES</h2>
             <Card className='comment-card-text'>
                 <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Card.Body>
             </Card>
