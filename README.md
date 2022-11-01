@@ -26,7 +26,12 @@ Click on `LOGIN/SIGNUP` atop the main page and follow the prompts. Once logged i
 
 ## Screenshots
 
+**The Orbital Odyssey Homepage with Login Prompt and 3d Animation**
+![Orbital Odyssey mainpage](./client/src/assets/images/odyssey-homepage.png)
+<br>
 
+**The SignUp/Login Modal**
+![Signup and Login screen](./client/src/assets/images/login-screen.png)
 
 ## Contributors
 

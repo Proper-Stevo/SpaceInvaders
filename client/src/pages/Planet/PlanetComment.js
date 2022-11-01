@@ -10,7 +10,7 @@ import { SAVE_COMMENT, REMOVE_COMMENT } from '../../utils/mutations';
 import { QUERY_USERS } from '../../utils/queries';
 
 
-export default function PlanetComment(planet) {
+export default function PlanetComment({planet}) {
 
     // define userComment through query
     // mutations to update comment

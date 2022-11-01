@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-
+import '../../utils/queries';
 import Card from 'react-bootstrap/Card';
-import PlanetSounds from './planetSounds';
 import { useParams } from 'react-router-dom';
 import moonImg from '../../assets/images/moon-img.png';
 
-import './Planet.css';
 
 //* COMPONENTS---------------------------
 import PlanetFacts from './PlanetFacts';
 // import Moons from './Moons';
 import PlanetComment from './PlanetComment';
-import planetSounds from './planetSounds';
+import PlanetSounds from './planetSounds';
+import './Planet.css';
 
-export default function Planet(planet) {
-
-
+export default function PlanetContainer(planet) {
     return (
         <div className='planetContainer'>
             {/* pass through planet data */}
@@ -33,11 +30,10 @@ export default function Planet(planet) {
 
             <PlanetComment
                 planet={planet} />
-            <PlanetSounds planet={planetname} />
+            <PlanetSounds planet={planet.name} />
             {/* <PlanetSounds planet={planetname} /> */}
             <PlanetComment />
         </div>
 
     );
 };
-

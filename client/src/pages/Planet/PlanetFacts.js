@@ -14,15 +14,16 @@ import { useParams } from 'react-router-dom';
 
 
 
-export default function Planet(planet) {
+export default function Facts() {
 
-const {planetname} = useParams()
+const {planetname} = useParams();
 
 //  PASS DATA -- add below in function App():
 const { loading, data } = useQuery(QUERY_PLANET, {
     variables: {name:planetname}
 });
 const planet = data?.planet || {};
+console.log(planet)
 if (loading) {
     return <div>loading...</div>
 }
@@ -31,7 +32,7 @@ if (loading) {
             <Card className='planet-name-card'>
                 <Card.Body className='planet-name-body'>
                     <Card.Subtitle className="mb-2 text-muted planet-body-type">{planet.bodyType}</Card.Subtitle>
-                    <Card.Title className='planet-name'>{planet.name}</Card.Title>
+                    <Card.Title className='planet-name'>{planetname}</Card.Title>
                 </Card.Body>
             </Card>
             {/* insert planet image */}

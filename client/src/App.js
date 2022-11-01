@@ -11,14 +11,10 @@ import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Planet from './pages/Planet'
+import Planets from './pages/Planet'
 
 
 import './App.css';
-
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { OrbitControls, Sky, Stars } from "@react-three/drei";
-import * as THREE from "three";
 // import planetData from "./planetData";
 
 import "./styles.css";
@@ -54,12 +50,12 @@ const client = new ApolloClient({
 // ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
 // keep outside
 // GET DATA ---
-import { useQuery } from '@apollo/client';
-import { QUERY_PLANET } from '../../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_PLANET } from '../../utils/queries';
 
 //  PASS DATA -- add below in function App():
-const { loading, data } = useQuery(QUERY_PLANET);
-const planet = data?.planet || {};
+// const { loading, data } = useQuery(QUERY_PLANET);
+// const planet = data?.planet || {};
 //  <Planet planet={planet}/>
 
 
@@ -68,19 +64,16 @@ export default function App() {
   const navigate = useNavigate();
   return (
     <ApolloProvider client={client}>
-
       <Navbar />
       <div style={{ width: "100vw", height: "100vh" }}>
-
-
         <Routes>
           <Route
             path="/"
             element={<Home nav={navigate} />}
           />
           <Route
-            path="/planet/:planetname"
-            element={<Planet />}
+            path="/planet"
+            element={<Planets  />}
           />
           <Route
             path="/login"

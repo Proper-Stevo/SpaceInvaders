@@ -45,10 +45,6 @@ export default function Home(props) {
   )
 };
 
-
-const name = (planet) => `../assets/images/sun.jpg`;
-
-
 function Sun() {
   const colormap = useLoader(TextureLoader, sun)
   return (
@@ -66,7 +62,6 @@ function Planet({ planet: { img, xRadius, zRadius, size, path }, nav }) {
 
   const randomNum = Math.random();
   const planetRef = React.useRef();
-  console.log(img)
   if (path === "mercury") {
     img = mercury
   } else if (path === "venus") {
@@ -99,11 +94,7 @@ function Planet({ planet: { img, xRadius, zRadius, size, path }, nav }) {
 
       <mesh ref={planetRef} onClick={() => {
         console.log(`hit ${path}`)
-        // return document.location.replace(`/planet/${path}`)
-        // console.log(nav())
         return nav(`/planet/${path}`)
-        //add link her
-
       }}>
         <sphereGeometry args={[size, 32, 32]} />
         <meshStandardMaterial

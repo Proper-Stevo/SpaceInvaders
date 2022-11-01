@@ -1,7 +1,4 @@
-
 import React, { Component, useState } from 'react';
-
-import Planet from '.';
 
 import Earth from '../../assets/sounds/earthSound.mp3';
 import Jupiter from '../../assets/sounds/jupiterSound.mp3';
