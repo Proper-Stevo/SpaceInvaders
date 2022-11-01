@@ -4,9 +4,10 @@
 import React, { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab} from 'react-bootstrap';
-import './Navbar.css'
+
 import SignUpForm from '../pages/Signup';
 import LoginForm from '../pages/Login';
+// import './Navbar.css'
 
 import Auth from '../utils/auth';
 
@@ -19,8 +20,8 @@ export default function Navigation() {
 
       <Navbar className='nav-container'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/' className='nav-title'>
-            Orbital Odyssey
+          <Navbar.Brand className='nav-title' as={Link} to='/' style={{fontSize: "45px"}}>
+            ORBITAL ODYSSEY
           </Navbar.Brand>
             <Nav className='ml-auto'>
               {/* if user is logged in show saved books and logout */}

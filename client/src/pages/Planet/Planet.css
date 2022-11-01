@@ -12,21 +12,22 @@
 .planet-name-card {
     margin: auto;
     max-width: 80%;
-    padding: 20px;
-    /* background-color: rgba(218, 223, 225, .6); */
-    background-color: none;
+    max-height: fit-content;
+    padding: 2px 5px 0px 5px;
+    background-color: rgba(218, 223, 225, .6);
+    /* background-color: none; */
     border: 2px solid rgba(218, 223, 225, .6);
     margin-top: 100px;
     width: fit-content;
     border-radius: 5px;
     float: left;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 50px 0px 50px 0px;
+    font-family: var(--fontText);
 }
 
-/* .planet-name-card Body {
-    padding: 30px;
-} */
+.planet-name-body{
+    padding: 0px;
+}
 
 .planet-body-type {
     font-size: 13px;
@@ -38,14 +39,12 @@
 
 /* ------------------PLANET FACTS------------------- */
 .planetFactsContainer {
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: fit-content;
+    padding: 60px 30px 60px 30px;
+    width: 500px;
     margin: auto;
-    margin-top: 20px;
+    font-family: var(--fontText);
     position: relative;
+    
 }
 
 .planetFactsContainer::before {
@@ -67,27 +66,38 @@
             calc(100% - 8px) 4px, 
             calc(50.00px + 3.31px) 8px, 8px 
             calc(50.00px + 3.31px));
-    border-style: groove;
 }
 
 .planet-facts-row {
-    margin: 0;
+    margin: auto;
     width: fit-content;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+}
+
+.planet-fact-col {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.planet-fact-body {
+    padding: 10px;
 }
 
 .planet-fact-card {
     margin: 10px;
     border: 2px solid gray;
     border-radius: 3px;
-    padding: 4px;
+    padding: 2px 0px 2px 0px;
     background-color: rgba(218, 223, 225, .6);
+    
 }
 
 .planet-data {
-    font-size: 25px;
+    font-size: 60px;
 }
 
 .fact-card-item {
