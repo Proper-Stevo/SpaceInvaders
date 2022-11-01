@@ -22,15 +22,10 @@ export default function Navigation() {
           <Navbar.Brand as={Link} to='/' className='nav-title'>
             Orbital Odyssey
           </Navbar.Brand>
-          {/* <Navbar.Toggle aria-controls='navbar' /> */}
-          {/* <Navbar.Collapse id='navbar'> */}
             <Nav className='ml-auto'>
               {/* if user is logged in show saved books and logout */}
-              {/* {Auth.loggedIn() ? ( */}
+              {Auth.loggedIn() ? (
                 <div>
-                  <Nav.Link className="planet-link" as={Link} to='/planet' >
-                    Planet
-                  </Nav.Link>
                   <Nav.Link className="planet-link" as={Link} to='/planet/earth' >
                     Earth
                   </Nav.Link>
@@ -56,12 +51,10 @@ export default function Navigation() {
                     Logout
                   </Nav.Link>                   
                 </div>
-              {/* ) : (
+              ) : (
                 <Nav.Link className='login-home-link' onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )} */}
-
+              )}
             </Nav>
-          {/* </Navbar.Collapse> */}
         </Container>
       </Navbar>
       {/* set modal data up */}
@@ -76,10 +69,10 @@ export default function Navigation() {
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                  <Nav.Link className="nav-login" eventKey='login'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link className="nav-login"eventKey='signup'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>

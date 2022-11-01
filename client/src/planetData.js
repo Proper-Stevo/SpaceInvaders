@@ -3,68 +3,76 @@
 const planetData = [
   {
     planet: 'Mercury',
-    color: 'tan',
+    img: './assets/images/mercury.jpg',
     xRadius: 1.5 * 4,
     zRadius: 1.5 * 2,
-    size: (1, 1)
+    size: (1, 1),
+    path: 'mercury'
   },
   {
     planet: 'Venus',
-    color: 'purple',
+    img: './assets/images/venus.jpg',
     xRadius: 2.5 * 4,
     zRadius: 2.5 * 2,
-    size: (1, 1)
+    size: (1, 1),
+    path: 'venus'
   },
   {
     planet: 'Earth',
-    color: 'blue',
+    img: './assets/images/earth.jpg',
     xRadius: 3.5 * 4,
     zRadius: 3.5 * 2,
-    size: (1, 1.3)
+    size: (1, 1.3),
+    path: 'earth'
   },
   {
     planet: 'Mars',
-    color: 'red',
+    img: './assets/images/mars.jpg',
     xRadius: 4.5 * 4,
     zRadius: 4.5 * 2,
-    size: (1, 1)
+    size: (1, 1),
+    path: 'mars'
   },
   {
     planet: 'Jupiter',
-    color: 'yellow',
+    img: './assets/images/jupiter.jpg',
     xRadius: 7.5 * 4,
     zRadius: 7.5 * 2,
-    size: (1, 2)
+    size: (1, 2),
+    path: 'jupiter'
   },
   {
     planet: 'Saturn',
-    color: 'orangered',
+    img: './assets/images/saturn.jpg',
     xRadius: 9.5 * 4,
     zRadius: 9.5 * 2,
-    size: (1, 1.5)
+    size: (1, 1.5),
+    path: 'saturn'
   },
   {
     planet: 'Uranus',
-    color: 'blue',
+    img: './assets/images/uranus.jpg',
     xRadius: 10.5 * 4,
     zRadius: 10.5 * 2,
-    size: (1, 1.2)
+    size: (1, 1.2),
+    path: 'uranus'
   },
   {
     planet: 'Neptune',
-    color: 'purple',
+    img: './assets/images/neptune.jpg',
     xRadius: 11.5 * 4,
     zRadius: 11.5 * 2,
-    size: (1, 1.65)
+    size: (1, 1.65),
+    path: 'neptune'
   },
   {
     planet: 'Pluto',
-    color: 'green',
+    img: './assets/images/pluto.jpg',
     xRadius: 12.5 * 4,
     zRadius: 12.5 * 2,
-    size: (1, 1)
+    size: (1, 1),
+    path: 'pluto'
   },
-
 ]
 
 export default planetData;

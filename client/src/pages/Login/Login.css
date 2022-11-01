@@ -1,0 +1,16 @@
+:root {
+    --titleText: 'Megrim', cursive;
+    --fontText: 'Unica One', cursive;
+    --starText: 'Codystar', cursive;
+}
+
+.modal-header {
+    background-color: black;
+    font-family: var(--fontText);
+}
+
+.modal-body {
+    color: white;
+    background-color: black;
+    font-family: var(--fontText);
+}

@@ -5,8 +5,12 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@apollo/client": "^3.5.8",
+
+    "proxy": "http://localhost:3001",
+
     "@react-three/drei": "4.3.0",
     "@react-three/fiber": "6.0.16",
+
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
