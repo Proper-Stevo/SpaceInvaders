@@ -13,47 +13,20 @@ import PlanetFacts from './PlanetFacts';
 import PlanetComment from './PlanetComment';
 import planetSounds from './planetSounds';
 
-
-import { useQuery } from '@apollo/client';
-import { QUERY_PLANET } from '../../utils/queries';
-
-// get props from app.js when user selects a planet
-// export default function Planet(planet) {
-
-
-//     // !
-//     const { loading, data } = useQuery(QUERY_PLANET);
-//     // userData is data pulled from users or empty object
-//     const planetData = data?.planet || {};
-
-//     const audio = new Audio('./assets/earthSound.mp3');
-
-//     const start = () => {
-//         audio.play();
-//     }
-
-
-//     // !
-//     const { loading, data } = useQuery(QUERY_PLANET);
-//     // userData is data pulled from users or empty object
-//     const planetData = data?.planet || {};
-
-
 export default function Planet(planet) {
 
-    const { planetname } = useParams();
 
     return (
         <div className='planetContainer'>
             {/* pass through planet data */}
             <PlanetFacts />
             <div className='moon-container'>
-            <Card className="bg-dark text-white my-5 moon-display">
-                <Card.Img className="moon-img" src={moonImg} alt="Card image" />
-                <Card.ImgOverlay className="overlay">
-                    <Card.Title className='moon-name'>Moon Name</Card.Title>
-                </Card.ImgOverlay>
-            </Card>
+                <Card className="bg-dark text-white my-5 moon-display">
+                    <Card.Img className="moon-img" src={moonImg} alt="Card image" />
+                    <Card.ImgOverlay className="overlay">
+                        <Card.Title className='moon-name'>Moon Name</Card.Title>
+                    </Card.ImgOverlay>
+                </Card>
             </div>
             {/* <Moon
                 planet={planet}/> */}

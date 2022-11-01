@@ -4,9 +4,9 @@
     --starText: 'Codystar', cursive;
 }
 
-.planet-container {
-    background-color: rgba(218, 223, 225, 0);
-}
+/* .planet-container {
+    
+} */
 
 /* -------------PLANET NAME CARD------------------ */
 .planet-name-card {
@@ -52,7 +52,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: gray;
+    background: rgba(218, 223, 225, .6);
     clip-path: polygon(0 50.00px, 
             50.00px 0, 100% 0, 100% 
             calc(100% - 50.00px),
@@ -83,6 +83,7 @@
     border: 2px solid gray;
     border-radius: 3px;
     padding: 4px;
+    background-color: rgba(218, 223, 225, .6);
 }
 
 .planet-data {
@@ -113,6 +114,7 @@
 .moon-name {
     margin: auto;
     width: fit-content;
+    background-color: rgba(218, 223, 225, .6);
 }
 
 /* -----------------PLANET NOTES(SAVED)------------ */
