@@ -24,6 +24,10 @@ query Query {
       avgTemp
       bodyType
       moons
+      sideralOrbit
+      sideralRotation
+      distanceFromSun
+      yearLength
     }
   }`;
 
@@ -38,5 +42,9 @@ query Query {
       avgTemp
       bodyType
       moons
+      sideralOrbit
+      sideralRotation
+      distanceFromSun
+      yearLength
     }
   }`;

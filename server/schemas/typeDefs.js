@@ -22,6 +22,10 @@ const typeDefs = gql`
     avgTemp: Int
     bodyType: String
     moons: [String]
+    sideralOrbit: Float
+    sideralRotation: Float
+    distanceFromSun: Float
+    yearLength: Float
   }
   type Comment {
     _id: ID

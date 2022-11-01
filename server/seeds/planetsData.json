@@ -1,6 +1,6 @@
 [
     {
-        "name": "Mercury",
+        "name": "mercury",
         "mass": 3.30114,
         "gravity": 3.7,
         "density": 5.4291,
@@ -12,7 +12,7 @@
         "yearLength": 88
     },
     {
-        "name": "Venus",
+        "name": "venus",
         "mass": 4.86747,
         "gravity": 8.87,
         "density": 5.243,
@@ -39,7 +39,7 @@
         "yearLength": 365
     },
     {
-        "name": "Mars",
+        "name": "mars",
         "mass": 6.41712,
         "gravity": 3.71,
         "density": 3.9341,
@@ -55,7 +55,7 @@
         "yearLength": 687
     },
     {
-        "name": "Jupiter",
+        "name": "jupiter",
         "mass": 1.89819,
         "gravity": 24.79,
         "density": 1.3262,
@@ -149,7 +149,7 @@
         "yearLength": 4380
     },
     {
-        "name": "Saturn",
+        "name": "saturn",
         "mass": 5.68336,
         "gravity": 10.44,
         "density": 0.6871,
@@ -245,7 +245,7 @@
         "yearLength": 10585
     },
     {
-        "name": "Uranus",
+        "name": "uranus",
         "mass": 8.68127,
         "gravity": 8.87,
         "density": 1.27,
@@ -286,7 +286,7 @@
         "yearLength": 30660
     },
     {
-        "name": "Neptune",
+        "name": "neptune",
         "mass": 1.02413,
         "gravity": 11.15,
         "density": 1.638,
@@ -314,7 +314,7 @@
         "yearLength": 60225
     },
     {
-        "name": "Pluto",
+        "name": "pluto",
         "mass": 1.303,
         "gravity": 0.62,
         "density": 1.89,
