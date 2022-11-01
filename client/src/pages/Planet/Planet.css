@@ -15,7 +15,6 @@
     max-height: fit-content;
     padding: 2px 5px 0px 5px;
     background-color: rgba(218, 223, 225, .6);
-    /* background-color: none; */
     border: 2px solid rgba(218, 223, 225, .6);
     margin-top: 100px;
     width: fit-content;
@@ -33,10 +32,6 @@
     font-size: 13px;
 }
 
-.planet-name {
-    font-size: 30px;
-}
-
 /* ------------------PLANET FACTS------------------- */
 .planetFactsContainer {
     padding: 60px 30px 60px 30px;
@@ -44,7 +39,6 @@
     margin: auto;
     font-family: var(--fontText);
     position: relative;
-    
 }
 
 .planetFactsContainer::before {
@@ -92,12 +86,9 @@
     border: 2px solid gray;
     border-radius: 3px;
     padding: 2px 0px 2px 0px;
+    background-color: none;
     background-color: rgba(218, 223, 225, .6);
     
-}
-
-.planet-data {
-    font-size: 60px;
 }
 
 .fact-card-item {
