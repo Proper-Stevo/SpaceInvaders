@@ -1,4 +1,4 @@
-/* :root {
+:root {
     --titleText: 'Megrim', cursive;
     --fontText: 'Unica One', cursive;
     --starText: 'Codystar', cursive;
@@ -7,23 +7,23 @@
 .navbar {
     height: 100px;
     background-color: rgba(232, 232, 232, .5);
-}
-
-.nav-container {
-    height: 100px;
-    background-color: (108, 122, 137, .7);
     font-family: var(--fontText);
-
+    text-shadow: 2px 2px 3px #c0392b;
 }
 
 .nav-title {
-    font-size: 70px;
     font-family: var(--titleText);
     padding: 20px;
     text-decoration: none;
-    color: whitesmoke;
     vertical-align: middle;
-    max-width: fit-content;
+    transition: 0.3s;
+}
+
+.nav-title:hover,
+.planet-link:hover,
+.login-home-link:hover,
+.logged-in-links:hover {
+    text-shadow: 5px 5px 8px #cf000f;
 }
 
 .login-home-link {
@@ -47,4 +47,4 @@
 
 .planet-link:hover {
     color: hotpink;
-} */
+}

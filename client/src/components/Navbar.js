@@ -3,11 +3,11 @@
 
 import React, { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab} from 'react-bootstrap';
+import { Navbar, Nav, Container, Modal, Tab, Row} from 'react-bootstrap';
 
 import SignUpForm from '../pages/Signup';
 import LoginForm from '../pages/Login';
-// import './Navbar.css'
+import './Navbar.css'
 
 import Auth from '../utils/auth';
 
@@ -20,41 +20,41 @@ export default function Navigation() {
 
       <Navbar className='nav-container'>
         <Container fluid>
-          <Navbar.Brand className='nav-title' as={Link} to='/' style={{fontSize: "45px"}}>
+          <Navbar.Brand className='nav-title' as={Link} to='/' style={{fontSize: "45px", fontWeight:"bold", color:"whitesmoke"}}>
             ORBITAL ODYSSEY
           </Navbar.Brand>
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto row row-cols-auto'>
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
-                <div>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/earth' >
+                <Row>
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/earth' style={{color:"whitesmoke"}} >
                     Earth
                   </Nav.Link>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/mercury' >
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/mercury' style={{color:"whitesmoke"}} >
                     Mercury
                   </Nav.Link>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/jupiter' >
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/jupiter' style={{color:"whitesmoke"}}>
                     Jupiter
                   </Nav.Link>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/mars' >
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/mars' style={{color:"whitesmoke"}}>
                     Mars
                   </Nav.Link>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/neptune' >
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/neptune' style={{color:"whitesmoke"}}>
                     Neptune
                   </Nav.Link>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/saturn' >
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/saturn' style={{color:"whitesmoke"}}>
                     Saturn
                   </Nav.Link>
-                  <Nav.Link className="planet-link" as={Link} to='/planet/venus' >
+                  <Nav.Link className="planet-link col" as={Link} to='/planet/venus' style={{color:"whitesmoke"}}>
                     Venus
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>
+                  <Nav.Link onClick={Auth.logout} style={{color:"whitesmoke"}}>
                     Logout
                   </Nav.Link>                   
-                </div>
+                </Row>
               ) : (
-                <Nav.Link className='login-home-link' onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )}
+                <Nav.Link className='login-home-link' onClick={() => setShowModal(true)} style={{color:"whitesmoke"}}>Login/Sign Up</Nav.Link>
+              )} 
             </Nav>
         </Container>
       </Navbar>
