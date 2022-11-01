@@ -6,7 +6,7 @@ const planetData = [
     img: './assets/images/mercury.jpg',
     xRadius: 1.5 * 4,
     zRadius: 1.5 * 2,
-    size: (1, 1),
+    size: (1, .5),
     path: 'mercury'
   },
   {
@@ -14,30 +14,30 @@ const planetData = [
     img: './assets/images/venus.jpg',
     xRadius: 2.5 * 4,
     zRadius: 2.5 * 2,
-    size: (1, 1),
+    size: (1, 0.8),
     path: 'venus'
   },
   {
     planet: 'Earth',
     img: './assets/images/earth.jpg',
-    xRadius: 3.5 * 4,
-    zRadius: 3.5 * 2,
+    xRadius: 4.2 * 4,
+    zRadius: 4.2 * 2,
     size: (1, 1.3),
     path: 'earth'
   },
   {
     planet: 'Mars',
     img: './assets/images/mars.jpg',
-    xRadius: 4.5 * 4,
-    zRadius: 4.5 * 2,
+    xRadius: 6 * 4,
+    zRadius: 6 * 2,
     size: (1, 1),
     path: 'mars'
   },
   {
     planet: 'Jupiter',
     img: './assets/images/jupiter.jpg',
-    xRadius: 7.5 * 4,
-    zRadius: 7.5 * 2,
+    xRadius: 7.75 * 4,
+    zRadius: 7.75 * 2,
     size: (1, 2),
     path: 'jupiter'
   },
@@ -52,24 +52,24 @@ const planetData = [
   {
     planet: 'Uranus',
     img: './assets/images/uranus.jpg',
-    xRadius: 10.5 * 4,
-    zRadius: 10.5 * 2,
+    xRadius: 11.5 * 4,
+    zRadius: 11.5 * 2,
     size: (1, 1.2),
     path: 'uranus'
   },
   {
     planet: 'Neptune',
     img: './assets/images/neptune.jpg',
-    xRadius: 11.5 * 4,
-    zRadius: 11.5 * 2,
+    xRadius: 13 * 4,
+    zRadius: 13 * 2,
     size: (1, 1.65),
     path: 'neptune'
   },
   {
     planet: 'Pluto',
     img: './assets/images/pluto.jpg',
-    xRadius: 12.5 * 4,
-    zRadius: 12.5 * 2,
+    xRadius: 14.5 * 4,
+    zRadius: 14.5 * 2,
     size: (1, 1),
     path: 'pluto'
   },

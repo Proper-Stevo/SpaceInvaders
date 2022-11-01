@@ -11,8 +11,6 @@
 - [Screenshots](#screenshots)
 - [Contributors](#contributors)
 - [License](#license)
-- [APIs](#apis)
-
 
 ## Description
 
