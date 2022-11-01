@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Navigate } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -15,20 +15,14 @@ import Planet from './pages/Planet'
 
 
 import './App.css';
-// import Planet from './pages/Planet';
 
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Sky, Stars } from "@react-three/drei";
 import * as THREE from "three";
 // import planetData from "./planetData";
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
 
 import "./styles.css";
 // import NotFoundErr from './pages/NotFoundErr';
-
-import './App.css';
-import Planet from './pages/Planet';
 
 
 // Construct our main GraphQL API endpoint
@@ -71,35 +65,36 @@ const planet = data?.planet || {};
 
 
 export default function App() {
-
+  const navigate = useNavigate();
   return (
     <ApolloProvider client={client}>
-      <Router>
+
       <Navbar />
       <div style={{ width: "100vw", height: "100vh" }}>
-          <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/planet/:planetname"
-              element={<Planet />}
-            />
-            <Route
-              path="/login"
-              element={<Login />}
-            />
-            {/* {/* ADD A 404 PAGE?? (PREMADE) */}
-            <Route
-              path='*'
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-              </Routes>
 
-        </div>
 
-      </Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home nav={navigate} />}
+          />
+          <Route
+            path="/planet/:planetname"
+            element={<Planet />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          {/* {/* ADD A 404 PAGE?? (PREMADE) */}
+          <Route
+            path='*'
+            element={<h1 className="display-2">Wrong page!</h1>}
+          />
+        </Routes>
+
+      </div>
+
     </ApolloProvider>
   );
 }

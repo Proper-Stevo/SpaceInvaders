@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# <b><i><span style="color:#65C0FB">Orbital ODYSSEY</span></b></i>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<a href="">Orbital Odyssey: Online Link</a><br />
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents
+- [Description](#description)
+- [Motivation](#motivation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributors](#contributors)
+- [License](#license)
+- [APIs](#apis)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description
 
-### `npm test`
+Space. Endless, always expanding (however that works) - the more we learn about our universe, the more we come to understand the vastness of that which we do not know. The <b><i><span style=color:#65C0FB>Orbital ODYSSEY</b></i></span> application aims shed some light on that vastness, beginning with our <i>Solar System</i>. Users may sign up and login to view information on each planet, such as density, orbit periods, average temperature, and the like. In addition, users can add notes to individual planet pages to aid in research, or to add new information or errata.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Motivation
 
-### `npm run build`
+The team set out to create a MERN-based application that focused on displaying the basic details of each planet within the Solar System, with data for each planet being dynamically generated into their respective components. The app implements Node.js and several packages including, but not limited to, React, Express.js, graphQL, jsonWebToken  - all centered around an Apollo-based MVC-structure in support of an interactive and responsive app. The animated model was implemented with <i>three.js, react-three-fiber, and react-three/drei</i>.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Click on `LOGIN/SIGNUP` atop the main page and follow the prompts. Once logged in, the user may navigate to each individual planet. From there, the user will see the details of the planet, along with a section for personal notes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/mladame"><img src="https://avatars.githubusercontent.com/u/110636032?v=4" width="100px;" alt="a basic github avatar"/><br /><sub><b>Martha Adame</b></sub></a><br /></a><a href="https://github.com/Proper-Stevo/SpaceInvaders/commits?author=mladame" title="Design">🎨</a><a href="https://github.com/Proper-Stevo/SpaceInvaders/commits?author=mladame" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Proper-Stevo"><img src="https://avatars.githubusercontent.com/u/83041959?v=4" width="100px;" alt="a basic github avatar"/><br /><sub><b>Steven Barrios</b></sub></a><br /><a href="https://github.com/Proper-Stevo/SpaceInvaders/commits?author=Proper-Stevo" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/LujanSolo"><img src="https://avatars.githubusercontent.com/u/104592750?v=4" width="100px;" alt="a dashing photo of LujanSolo"/><br /><sub><b>Jamie Lujan</b></sub></a><br /><a href="https://github.com/Proper-Stevo/SpaceInvaders/commits?author=LujanSolo" title="Design">🎨</a> <a href="https://github.com/Proper-Stevo/SpaceInvaders/commits?author=LujanSolo" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/camilleyong"><img src="https://avatars.githubusercontent.com/u/110850870?v=4" width="100px;" alt="a basic github avatar"/><br /><sub><b>Camille Young</b></sub></a><br /><a href="https://github.com/Proper-Stevo/SpaceInvaders/commits?author=camilleyong" title="Design">🎨</a></td>
+  </tr>
+</table>
+<hr>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+MIT License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Copyright (c) 2022 properstevo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### Code Splitting
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
