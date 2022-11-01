@@ -28,6 +28,22 @@ const planetSchema = new Schema({
     },
     moons: {
         type: Array,
+    },
+    sideralOrbit: {
+        type: Number,
+        // required: true
+    },
+    sideralRotation: {
+        type: Number,
+        // required: true
+    },
+    distanceFromSun: {
+        type: Number,
+        // required: true
+    },
+    yearLength: {
+        type: Number,
+        // required: true
     }
 });
 

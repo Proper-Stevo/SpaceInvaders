@@ -13,13 +13,13 @@ import PlanetFacts from './PlanetFacts';
 import PlanetComment from './PlanetComment';
 import planetSounds from './planetSounds';
 
-export default function Planet(planet) {
+export default function PlanetContainer(planetname) {
 
 
     return (
         <div className='planetContainer'>
             {/* pass through planet data */}
-            <PlanetFacts />
+            <PlanetFacts planetname={planetname}/>
             <div className='moon-container'>
                 <Card className="bg-dark text-white my-5 moon-display">
                     <Card.Img className="moon-img" src={moonImg} alt="Card image" />
@@ -32,10 +32,10 @@ export default function Planet(planet) {
                 planet={planet}/> */}
 
             <PlanetComment
-                planet={planet} />
-            <PlanetSounds planet={planetname} />
+                planetname={planetname} />
+            {/* <PlanetSounds planetname={planetname} /> */}
             {/* <PlanetSounds planet={planetname} /> */}
-            <PlanetComment />
+            {/* <PlanetComment /> */}
         </div>
 
     );
