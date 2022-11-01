@@ -54,11 +54,12 @@ const client = new ApolloClient({
 // ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
 // keep outside
 // GET DATA ---
-// import { useQuery } from '@apollo/client';
-// import { QUERY_PLANET } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
+import { QUERY_PLANET } from '../../utils/queries';
 
 //  PASS DATA -- add below in function App():
-// const planet = data?.planet || {};
+const { loading, data } = useQuery(QUERY_PLANET);
+const planet = data?.planet || {};
 //  <Planet planet={planet}/>
 
 
@@ -67,7 +68,6 @@ export default function App() {
   const navigate = useNavigate();
   return (
     <ApolloProvider client={client}>
-
 
       <Navbar />
       <div style={{ width: "100vw", height: "100vh" }}>
@@ -98,4 +98,5 @@ export default function App() {
     </ApolloProvider>
   );
 }
+
 
