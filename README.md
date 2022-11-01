@@ -1,7 +1,7 @@
 # <b><i><span style="color:#65C0FB">Orbital ODYSSEY</span></b></i>
 
 
-<a href="">Orbital Odyssey: Online Link</a><br />
+<a href="https://stormy-sands-64982.herokuapp.com/">Orbital Odyssey: Online Link</a><br />
 
 
 ## Table of Contents
@@ -11,8 +11,6 @@
 - [Screenshots](#screenshots)
 - [Contributors](#contributors)
 - [License](#license)
-- [APIs](#apis)
-
 
 ## Description
 
@@ -28,7 +26,15 @@ Click on `LOGIN/SIGNUP` atop the main page and follow the prompts. Once logged i
 
 ## Screenshots
 
+**The Orbital Odyssey Homepage with Login Prompt and 3d Animation**
+![Orbital Odyssey mainpage](./client/src/assets/images/odyssey-homepage.png)
+<br>
 
+**The SignUp/Login Modal**<br>
+![Signup and Login screen](./client/src/assets/images/login-screen.png)
+
+**Individual Planet Pages with moons**
+![Planet pages](./client/src/assets/images/planetscreenshot.png)
 
 ## Contributors
 
@@ -46,7 +52,7 @@ Click on `LOGIN/SIGNUP` atop the main page and follow the prompts. Once logged i
 
 MIT License
 
-Copyright (c) 2022 properstevo
+Copyright (c) 2022 Proper-Stevo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
