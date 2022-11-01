@@ -1,3 +1,9 @@
+:root {
+  --titleText: 'Megrim', cursive;
+  --fontText: 'Unica One', cursive;
+  --starText: 'Codystar', cursive;
+}
+
 .App {
   text-align: center;
 }

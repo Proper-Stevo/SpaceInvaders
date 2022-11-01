@@ -31,10 +31,10 @@ export default function Home(props) {
         </Suspense>
         <Sky />
         <Stars />
-        {planetData.map((planet) => (
+        {planetData.map((planet, index) => (
           //    <Link to = {`/${planet.path}`} >
           <Suspense fallback={<> loading... </>} >
-            <Planet planet={planet} key={planet.id} nav={props.nav} />
+            <Planet planet={planet} key={index} nav={props.nav}/>
           </Suspense>
           // </Link>
         ))}
@@ -44,6 +44,10 @@ export default function Home(props) {
     </>
   )
 };
+
+
+// const name = (planet) => `../assets/images/sun.jpg`;
+
 
 function Sun() {
   const colormap = useLoader(TextureLoader, sun)

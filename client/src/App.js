@@ -11,15 +11,13 @@ import { setContext } from '@apollo/client/link/context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Planets from './pages/Planet'
-
+import Planet from './pages/Planet'
 
 import './App.css';
 // import planetData from "./planetData";
-
-import "./styles.css";
 // import NotFoundErr from './pages/NotFoundErr';
 
+import "./styles.css";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,21 +42,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
-
-// TODO: const planet = user selects a planet, get name, pass all planet data by name
-// ! USER SELECTS PLANET, IF LOGGED IN.... OTHERWISE LOGIN - MODAL FROM MERN HW IN NAVBAR
-// keep outside
-// GET DATA ---
-// import { useQuery } from '@apollo/client';
-// import { QUERY_PLANET } from '../../utils/queries';
-
-//  PASS DATA -- add below in function App():
-// const { loading, data } = useQuery(QUERY_PLANET);
-// const planet = data?.planet || {};
-//  <Planet planet={planet}/>
-
-
 
 export default function App() {
   const navigate = useNavigate();
@@ -91,5 +74,4 @@ export default function App() {
     </ApolloProvider>
   );
 }
-
 
