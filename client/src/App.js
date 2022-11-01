@@ -23,8 +23,6 @@ import * as THREE from "three";
 
 import "./styles.css";
 
-
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',

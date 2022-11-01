@@ -7,16 +7,22 @@ import Form from 'react-bootstrap/Form';
 
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_COMMENT, REMOVE_COMMENT } from '../../utils/mutations';
-import { QUERY_USERS } from '../../utils/queries';
+import { QUERY_USERS, QUERY_PLANET } from '../../utils/queries';
+import { useParams } from 'react-router-dom';
 
 
-export default function PlanetComment(planet) {
+export default function PlanetComment() {
+
+    const { planetname } = useParams()
+    const upper = planetname.toUpperCase();
 
     // define userComment through query
     // mutations to update comment
     const { loading, data } = useQuery(QUERY_USERS);
     // userData is data pulled from users or empty object to load corresponding comment for each planet
-    const userComment = data?.users || {};
+    const userNotes = data?.users || {};
+
+    console.log (userNotes);
 
     // might need something like this to render proper note
     // if (planet.name == userComment.comments.planet) {
@@ -24,7 +30,7 @@ export default function PlanetComment(planet) {
     // }
 
     const [removeComment, { error }] = useMutation(REMOVE_COMMENT);
-    // const [addComment, { error }] = useMutation(SAVE_COMMENT);
+    // const [addComment, { err }] = useMutation(SAVE_COMMENT);
     // create new comment with state variable
     // const [userComment, setUserComment] = useState({ commentText: ''});
 
@@ -67,9 +73,9 @@ export default function PlanetComment(planet) {
     // ! otherwise render empty text box with save/add note button - if statment line 22
 
     // ! FIX IF STATEMENT - check if usercomment exists
-    return !userComment ? (
+    return !userNotes ? (
         <div className='userInputComment'>
-            <h2 className='notes-title'>SATURN NOTES</h2>
+            <h2 className='notes-title'>{upper} NOTES</h2>
             <InputGroup className="mb-3">
                 <Form.Control
                     aria-label="Default"
@@ -81,9 +87,12 @@ export default function PlanetComment(planet) {
         </div>
     ) : (
         <div className='userCommentCard'>
-            <h2 className='notes-title'>{planet.name} NOTES</h2>
+            <h2 className='notes-title'>{upper} NOTES</h2>
             <Card className='comment-card-text'>
-                <Card.Body>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Card.Body>
+                if (userNotes.planet == planetname) {
+                    <Card.Body>{userNote.commentText}</Card.Body>
+                }
+                
             </Card>
             <Button className='note-btn'>DELETE NOTE</Button>{' '}
         </div>
