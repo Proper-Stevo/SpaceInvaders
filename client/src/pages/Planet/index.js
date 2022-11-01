@@ -5,7 +5,7 @@ import './Planet.css';
 import PlanetFacts from './PlanetFacts';
 import Moons from './Moons';
 // import PlanetComment from './PlanetComment';
-// import planetSounds from './planetSounds';
+import PlanetSounds from './planetSounds';
 
 export default function PlanetContainer(planetname) {
 
@@ -15,7 +15,7 @@ export default function PlanetContainer(planetname) {
             <PlanetFacts planetname={planetname}/>
             <Moons planetname={planetname}/>
             {/* <PlanetComment planetname={planetname} /> */}
-            {/* <PlanetSounds planetname={planetname} /> */}
+            <PlanetSounds planetname={planetname} />
         </div>
 
     );

@@ -28,6 +28,13 @@
     font-size: 13px;
 }
 
+/* -------------------PLANET IMAGE----------------- */
+
+.planet-page-photo{
+    margin: 50px;
+    margin-top: 200px;
+}
+
 /* ------------------PLANET FACTS------------------- */
 .planetFactsContainer {
     padding: 60px 30px 60px 30px;
