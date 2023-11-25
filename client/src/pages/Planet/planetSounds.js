@@ -11,93 +11,79 @@ import Uranus from '../../assets/sounds/uranusSound.mp3';
 import Venus from '../../assets/sounds/venusSound.mp3';
 import '../../pages/Planet/Planet.css'
 
-// import Sound from 'react-sound';
-
-const PlanetSounds = ({planet}) => {
+const PlanetSounds = ({ planet }) => {
     const [isPlaying, setIsPlaying] = useState(false);
-    function handleToggleAudio () {
-        setIsPlaying(!isPlaying)
-        if (isPlaying) {
+    const [audioInstance, setAudioInstance] = useState(null);
+
+    useEffect(() => {
+        return () => {
+            if (audioInstance) {
+                audioInstance.pause();
+            }
+        };
+    }, [audioInstance]);
+
+    const handleToggleAudio = () => {
+        setIsPlaying(!isPlaying);
+        if (!isPlaying) {
             start();
         } else {
             stop();
         }
-    }
-    const start = () => {
-        if (planet === "earth" && isPlaying){
-            const audio = new Audio (Earth);
-            audio.play();
-        } 
-        if (planet === "mars"){
-            const audio = new Audio (Mars);
-            audio.play();
-        }
-        if (planet === "jupiter"){
-            const audio = new Audio (Jupiter);
-            audio.play();
-        }
-        if (planet === "mercury"){
-            const audio = new Audio (Mercury);
-            audio.play();
-        }
-        if (planet === "neptune"){
-            const audio = new Audio (Neptune);
-            audio.play();
-        }if (planet === "saturn"){
-            const audio = new Audio (Saturn);
-            audio.play();
-        }if (planet === "uranus"){
-            const audio = new Audio (Uranus);
-            audio.play();
-        }if (planet === "venus"){
-            const audio = new Audio (Venus);
-            audio.play();
-        }if (planet === "pluto"){
-            const audio = new Audio (Pluto);
-            audio.play();
-        }
-    }
+    };
 
-//     // const stop = () => {
-//     //     if (planet === "earth"){
-//     //         const audio = new Audio (Earth);
-//     //         audio.pause();
-//     //     } 
-//     //     if (planet === "mars"){
-//     //         const audio = new Audio (Mars);
-//     //         audio.pause();
-//     //     }
-//     //     if (planet === "jupiter"){
-//     //         const audio = new Audio (Jupiter);
-//     //         audio.pause();
-//     //     }
-//     //     if (planet === "mercury"){
-//     //         const audio = new Audio (Mercury);
-//     //         audio.pause();
-//     //     }
-//     //     if (planet === "neptune"){
-//     //         const audio = new Audio (Neptune);
-//     //         audio.pause();
-//     //     }if (planet === "saturn"){
-//     //         const audio = new Audio (Saturn);
-//     //         audio.pause();
-//     //     }if (planet === "uranus"){
-//     //         const audio = new Audio (Uranus);
-//     //         audio.pause();
-//     //     }if (planet === "venus"){
-//     //         const audio = new Audio (Venus);
-//     //         audio.pause();
-//     //     }
-//     // }
+    const start = () => {
+        let audio = null;
+
+        switch (planet) {
+            case 'earth':
+                audio = new Audio(Earth);
+                break;
+            case 'jupiter':
+                audio = new Audio(Jupiter);
+                break;
+            case 'mars':
+                audio = new Audio(Mars);
+                break;
+            case 'mercury':
+                audio = new Audio(Mercury);
+                break;
+            case 'venus':
+                audio = new Audio(Venus);
+                break;
+            case 'saturn':
+                audio = new Audio(Saturn);
+                break;
+            case 'uranus':
+                audio = new Audio(Uranus);
+                break;
+            case 'neptune':
+                audio = new Audio(Neptune);
+                break;
+            default:
+                break;
+        }
+
+        if (audio) {
+            audio.play();
+            setAudioInstance(audio);
+        }
+    };
+
+    const stop = () => {
+        if (audioInstance) {
+            audioInstance.pause();
+            setAudioInstance(null);
+        }
+    };
+
     return (
         <div>
-            <button 
-            onClick={handleToggleAudio} id='planetBtn'>
-                Play/Pause</button>
+            <button onClick={handleToggleAudio} id='planetBtn'>
+                Play/Pause
+            </button>
         </div>
-
-    )
-    }
-
+    );
+};
 
 export default PlanetSounds;
