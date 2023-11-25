@@ -1,7 +1,7 @@
 
 import React, { Component, useState, useEffect } from 'react';
 
-import Earth from "../../../src/assets/sounds/earthSound.mp3"
+import Earth from "../../assets/sounds/earthSound.mp3"
 import Jupiter from '../../assets/sounds/jupiterSound.mp3';
 import Mars from '../../assets/sounds/marsSound.mp3';
 import Mercury from '../../assets/sounds/mercurySound.mp3';
@@ -11,7 +11,7 @@ import Uranus from '../../assets/sounds/uranusSound.mp3';
 import Venus from '../../assets/sounds/venusSound.mp3';
 import '../../pages/Planet/Planet.css'
 
-const PlanetSounds = ({ planet }) => {
+const PlanetSounds = ({ planet = "earth" }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [audioInstance, setAudioInstance] = useState(null);
 
