@@ -1,7 +1,7 @@
 
 import React, { Component, useState, useEffect } from 'react';
 
-import Earth from '../../assets/sounds/earthSound.mp3';
+import Earth from "../../../src/assets/sounds/earthSound.mp3"
 import Jupiter from '../../assets/sounds/jupiterSound.mp3';
 import Mars from '../../assets/sounds/marsSound.mp3';
 import Mercury from '../../assets/sounds/mercurySound.mp3';
