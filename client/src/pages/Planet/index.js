@@ -15,7 +15,7 @@ export default function PlanetContainer(planetname) {
             <PlanetFacts planetname={planetname}/>
             <Moons planetname={planetname}/>
             {/* <PlanetComment planetname={planetname} /> */}
-            <PlanetSounds planetname={planetname} />
+            <PlanetSounds planet={planet} />
         </div>
 
     );
