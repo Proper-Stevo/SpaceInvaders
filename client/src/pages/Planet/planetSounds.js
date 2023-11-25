@@ -35,7 +35,7 @@ const PlanetSounds = ({ planet = "earth" }) => {
 
 
     const start = () => {
-        console.log("Planet:", Earth);
+        console.log("Planet:", planet);
         let audio = null;
 
         switch (planet) {
