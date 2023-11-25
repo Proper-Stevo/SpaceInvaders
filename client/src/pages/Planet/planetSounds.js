@@ -24,6 +24,7 @@ const PlanetSounds = ({ planet }) => {
     }, [audioInstance]);
 
     const handleToggleAudio = () => {
+        console.log("Toggle Audio Clicked");
         setIsPlaying(!isPlaying);
         if (!isPlaying) {
             start();
@@ -32,7 +33,9 @@ const PlanetSounds = ({ planet }) => {
         }
     };
 
+
     const start = () => {
+        console.log("Planet:", planet);
         let audio = null;
 
         switch (planet) {
