@@ -1,5 +1,5 @@
 
-import React, { Component, useStaten, useEffect } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 import Earth from '../../assets/sounds/earthSound.mp3';
 import Jupiter from '../../assets/sounds/jupiterSound.mp3';
